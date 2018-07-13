@@ -25,3 +25,5 @@ The focus is to create a guide that's easy to use with a clean interface that al
 |<img src="./src/assets/images/search-w.png" width="500"><br>The search page with the filters toggled closed|<img src="./src/assets/images/searchfilters-w.png" width="500"><br>The search page with the filters toggled open|
 
 ### <a name="components"></a>Project architecture
+
+<img src="./src/assets/images/AppComponent.png">
