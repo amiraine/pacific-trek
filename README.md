@@ -8,8 +8,8 @@
 3. [Project architecture](#components)
 4. [Tools and technologies](#tools)
 4. [Installation and setup guide](#setup)
-5. Project Log
-5. Credits and licenses
+5. [Project Log](#log)
+5. [Credits and licenses](#credit)
 
 ### <a name="description"></a> Project description
 #### Welcome to PacificTrek, a field guide for hikers in the Pacific Northwest.
@@ -55,7 +55,7 @@ Simply visit the website [url goes here]
 3. Go to your Firebase database and upload `./src/assets/hikelist.json`.
 4. Navigate to `src/constants/` and create a file called `firebaseConfig.js`
 5. Inside of the firebaseConfig.js file, add the following:
-  `const config = {
+  <br>`const config = {
     apiKey: "YOUR-UNIQUE-CREDENTIALS",
     authDomain: "YOUR-PROJECT-NAME.firebaseapp.com",
     databaseURL: "https://YOUR-PROJECT-NAME.firebaseio.com",
@@ -66,7 +66,8 @@ Simply visit the website [url goes here]
 5. For a live development server with hot-module replacement, run `npm start` in your terminal.
 
 ### <a name="log"></a> Project Log
-7/13/17 13:30pm working on setting up a firebase, made JSON for project directory
+7/13/17 2:00pm working on setting up a firebase, made JSON for project directory
+7/13/17 2:40pm still configuring firebase
 
 ### <a name="credit"></a> Credits and licenses
 ##### This project was developed as a capstone for Epicodus by Ami Cooper
