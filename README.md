@@ -53,11 +53,20 @@ Simply visit the website [url goes here]
 1. Clone repository from [https://github.com/amiraine/pacific-trek.git]
 2. Navigate to the project directory in your terminal and run `npm install`
 3. Go to your Firebase database and upload `./src/assets/hikelist.json`.
-4. Add your API key to the project.
+4. Navigate to `src/constants/` and create a file called `firebaseConfig.js`
+5. Inside of the firebaseConfig.js file, add the following:
+  `const config = {
+    apiKey: "YOUR-UNIQUE-CREDENTIALS",
+    authDomain: "YOUR-PROJECT-NAME.firebaseapp.com",
+    databaseURL: "https://YOUR-PROJECT-NAME.firebaseio.com",
+    projectId: "YOUR-UNIQUE-PROJECT-NAME",
+    storageBucket: "YOUR-UNIQUE-URL",
+    messagingSenderId: "YOUR-UNIQUE-CREDENTIALS"
+  };`
 5. For a live development server with hot-module replacement, run `npm start` in your terminal.
 
 ### <a name="log"></a> Project Log
-7/13/17 - Wrote the README and created component tree. Goals for the end of the day are: Complete web view wireframe and work on mobile view wireframe.
+7/13/17 13:30pm working on setting up a firebase, made JSON for project directory
 
 ### <a name="credit"></a> Credits and licenses
 ##### This project was developed as a capstone for Epicodus by Ami Cooper
