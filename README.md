@@ -22,8 +22,8 @@ The focus is to create a guide that's easy to use with a clean interface that al
 |--|--|
 | - Hike objects are displayed on the search page and are filterable by checkbox/text input criteria | - User login (via Google accounts)|
 | - Hike detail pages with dynamic routing | - Google maps for trailheads |
-| --- | Comment/rating system for each hike |
-| --- | Administrative ability from site (edit database without directly editing through Firebase)|
+| --- | - Comment/rating system for each hike |
+| --- | - Administrative ability from site (edit database without directly editing through Firebase)|
 
 ### <a name="wireframes"></a>Wireframes
 *The wireframes are only a prototype and the final project is subject to change*
