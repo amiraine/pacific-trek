@@ -17,8 +17,9 @@ On this site, you can search through hike trails based on various features to cr
 The focus is to create a guide that's easy to use with a clean interface that allows you to get the information you need to have a fun and safe hike and get out there!
 
 ### <a name="wireframes"></a>Wireframes
-* the wireframes are only a prototype and the final project is subject to change
+*The wireframes are only a prototype and the final project is subject to change*
 
+#### Desktop view
 |<img src="./src/assets/images/homepage-w.svg" width="500"><br>The homepage|<img src="./src/assets/images/browse-w.svg" width="500"><br>The browse page|
 |---|---|
 |<img src="./src/assets/images/search-w.svg" width="500"><br>The search page with the filters toggled closed|<img src="./src/assets/images/searchfilter-w.svg" width="500"><br>The search page with the filters toggled open|
