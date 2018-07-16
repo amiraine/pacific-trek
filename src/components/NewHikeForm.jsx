@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
-
+import constants from './../constants';
+import { c } = constants;
 
 function NewHikeForm(props){
   let _name = null;
@@ -21,7 +22,7 @@ function NewHikeForm(props){
     const { dispatch } = props;
     e.preventDefault();
     const action = {
-      type: 'ADD_HIKE',
+      type: c.ADD_HIKE,
       id: v4(),
       name: _name.value,
       start: _start.value,
@@ -112,4 +113,4 @@ function NewHikeForm(props){
     </div>
   )
 }
-export default NewHikeForm;
+export default connect()(NewHikeForm);

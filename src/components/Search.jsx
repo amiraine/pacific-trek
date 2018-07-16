@@ -1,9 +1,10 @@
 import React from 'react';
+import Hike from './Hike';
 
-function Search(){
+function Search(props){
   return(
     <div>
-
+      <Hike/>
     </div>
   )
 }
