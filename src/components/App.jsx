@@ -6,12 +6,13 @@ import Home from './Home';
 import Login from './Login';
 import Search from './Search';
 import Profile from './Profile';
-
+import NewHikeForm from './NewHikeForm';
 function App(){
 
   return(
     <div>
       <Navigation/>
+
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/browse" component={Browse}/>
