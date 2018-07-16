@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
 import constants from './../constants';
-import { c } = constants;
+const { c } = constants;
 
 function NewHikeForm(props){
   let _name = null;
@@ -76,6 +76,11 @@ function NewHikeForm(props){
           ref={(input) => {_end = input}}/><br/>
         <input
           type='text'
+          id='type'
+          placeholder='hike type'
+          ref={(input) => {_type = input}}/><br/>
+        <input
+          type='text'
           id='length'
           placeholder='Distance'
           ref={(input) => {_length = input}}/><br/>
@@ -84,11 +89,11 @@ function NewHikeForm(props){
           id='gain'
           placeholder='Elevation gain'
           ref={(input) => {_gain = input}}/><br/>
-        <input
-          type='text'
-          id='difficulty'
-          placeholder='Difficulty'
-          ref={(input) => {_difficulty = input}}/><br/>
+        <select id='difficulty' ref={(input) => {_difficulty = input}}>
+          <option value='Easy'>Easy</option>
+          <option value='Moderate'>Moderate</option>
+          <option value='Difficult'>Difficult</option>
+        </select><br/>
         <input
           type='text'
           id='season'
@@ -107,6 +112,7 @@ function NewHikeForm(props){
         <input
           type='text'
           id='features'
+          ref={(input) => {_features = input}}
           placeholder='Features, lower-case separated by commas and spaces'/><br/>
         <button type='submit' id='submit'>Submit</button>
       </form>

@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import constants from './../constants';
+const { c } = constants;
 
 function Hike(props){
   function handleSavingHike(hikeId){

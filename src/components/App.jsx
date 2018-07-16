@@ -9,6 +9,9 @@ import Profile from './Profile';
 import NewHikeForm from './NewHikeForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import constants from './../constants';
+const { c } = constants;
+
 
 function App(){
 
