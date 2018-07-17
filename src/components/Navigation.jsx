@@ -4,7 +4,7 @@ import trees from '../../src/assets/images/logo.svg';
 
 function Navigation(){
   return(
-    <div>
+    <div className='nav-wrapper'>
       <style jsx>{`
         img {
           max-width: 500px;
@@ -12,9 +12,6 @@ function Navigation(){
           top: -260px;
           left: -50px;
           z-index: 1;
-        }
-        Link{
-          text-decoration: none;
         }
         .logo{
           height: 1px;
@@ -28,6 +25,7 @@ function Navigation(){
           top: 25px;
           background-color: #557D00;
           padding: 0 50px 0 500px;
+          margin-bottom: 100px;
         }
         .nav-link{
           line-height: 120px;
@@ -37,7 +35,6 @@ function Navigation(){
           font-size: 2em;
         }
       `}</style>
-
       <div className='logo'>
         <Link to='/' style={{ textDecoration: 'none', color: 'white' }}>
           <img src={trees}/>

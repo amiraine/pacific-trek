@@ -11,33 +11,41 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import constants from './../constants';
 const { c } = constants;
+import * as actions from './../actions';
 
+class App extends React.Component {
+  componentWillMount(){
+    const { dispatch } = this.props;
+    const { watchFirebaseHikesRef } = actions;
+    dispatch(watchFirebaseHikesRef());
+    console.log(this.props);
+  }
 
-function App(){
+  render(){
+    return(
+      <div>
+        <style jsx global>{`
+            @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500,700');
+            * {
+              margin: 0;
+              padding: 0;
 
-  return(
-    <div>
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500,700');
-        * {
-          margin: 0;
-          padding: 0;
-
-        }
-        div{
-          border: 1px dashed grey;
-        }
-      `}</style>
-      <Navigation/>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/browse" component={Browse}/>
-        <Route path="/search" component={Search}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/profile" component={Profile}/>
-      </Switch>
-    </div>
-  );
+            }
+            div{
+              border: 1px dashed grey;
+            }
+            `}</style>
+          <Navigation/>
+          <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route path="/browse" component={Browse}/>
+            <Route path="/search" render= {()=><Search hikeList={this.props.masterHikeList}/>}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/profile" component={Profile}/>
+          </Switch>
+        </div>
+      );
+  }
 }
 
 App.propTypes ={

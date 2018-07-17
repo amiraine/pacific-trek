@@ -19,4 +19,17 @@ function Hike(props){
     </div>
   )
 }
-export default Hike;
+Hike.propTypes = {
+  name: PropTypes.string.isRequired,
+  start: PropTypes.string.isRequired,
+  end: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  length: PropTypes.number.isRequired,
+  gain: PropTypes.number.isRequired,
+  difficulty: PropTypes.string.isRequired,
+  season: PropTypes.array.isRequired,
+  family: PropTypes.string.isRequired,
+  crowded: PropTypes.string.isRequired,
+  features: PropTypes.array.isRequired
+}
+export default connect()(Hike);

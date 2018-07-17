@@ -1,5 +1,5 @@
 import constants from './../constants';
-const { firebaseConfig } = constants;
+const { firebaseConfig, c } = constants;
 import Firebase from 'firebase';
 
 firebase.initializeApp(firebaseConfig);
@@ -19,4 +19,22 @@ export function addHike(_name, _start, _end, _type, _length, _gain, _difficulty,
     crowded: _crowded,
     features: _features
   });
+}
+
+export function receiveHike(hikeFromFirebase){
+  return{
+    type: c.RECEIVE_HIKE,
+    hike: hikeFromFirebase
+  };
+}
+
+export function watchFirebaseHikesRef(){
+  return function(dispatch){
+    hikes.on('child_added', data =>{
+      const newHike = Object.assign({}, data.val(), {
+        id: data.getKey(),
+      });
+      dispatch(receiveHike(newHike));
+    });
+  };
 }

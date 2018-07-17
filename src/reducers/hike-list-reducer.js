@@ -3,7 +3,7 @@ const { c } = constants;
 
 export default (state = {}, action) =>{
   switch (action.type){
-  case 'ADD_HIKE':
+  case c.ADD_HIKE:
     const { name, start, end, type, length, gain, difficulty, season, family, crowded, features } = action;
     let newState = Object.assign({}, state, {
       [id]: {
@@ -21,6 +21,12 @@ export default (state = {}, action) =>{
       }
     });
     return newState;
+    
+  case c.RECEIVE_HIKE:
+    newState = Object.assign({}, state);
+    newState[action.hike.id] = action.hike;
+    return newState;
+
   default:
     return state;
   }
