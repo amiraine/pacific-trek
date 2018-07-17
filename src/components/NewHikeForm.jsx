@@ -17,12 +17,13 @@ function NewHikeForm(props){
   let _season = null;
   let _family = null;
   let _crowded  = null;
-  let _features = [];
+  let _fees = null;
+  let _features = null;
 
   function handleNewHikeSubmission(event){
     const { dispatch } = props;
     event.preventDefault();
-    dispatch(addHike(_name.value, _start.value, _end.value, _type.value, _length.value, _gain.value, _difficulty.value, _season.value, _family.value, _crowded.value, _features.value.split(', ')));
+    dispatch(addHike(_name.value, _start.value, _end.value, _type.value, parseInt(_length.value), parseInt(_gain.value), _difficulty.value, _season.value.split(', '), _family.value, _crowded.value, _features.value.split(', ')));
 
     _name.value = '';
     _start.value = '';
@@ -41,63 +42,71 @@ function NewHikeForm(props){
     <div className='form-container'>
       <style>{`
         .form-container{
-          margin-left: auto;
-          width: 50vw;
-          padding-top: 300px;
+          text-align:center;
+          padding-top:200px;
         }
       `}</style>
       <form onSubmit={handleNewHikeSubmission}>
         <input
+          required
           type='text'
           id='name'
           placeholder='Hike name'
           ref={(input) => {_name = input;}}/><br/>
         <input
+          required
           type='text'
           id='start'
           placeholder='Start point'
           ref={(input) => {_start = input}}/><br/>
         <input
+          required
           type='text'
           id='end'
           placeholder='End point'
           ref={(input) => {_end = input}}/><br/>
+        <select required id='type' ref={(input) => {_type = input}}>
+          <option disabled>hike type</option>
+          <option value='Out-and-back'>Out-and-back</option>
+          <option value='Loop'>Loop</option>
+          <option value='Lollipop'>Lollipop</option>
+          <option value='Point-to-point'>Point-to-point</option>
+        </select><br/>
         <input
-          type='text'
-          id='type'
-          placeholder='hike type'
-          ref={(input) => {_type = input}}/><br/>
-        <input
+          required
           type='text'
           id='length'
           placeholder='Distance'
           ref={(input) => {_length = input}}/><br/>
         <input
+          required
           type='text'
           id='gain'
           placeholder='Elevation gain'
           ref={(input) => {_gain = input}}/><br/>
-        <select id='difficulty' ref={(input) => {_difficulty = input}}>
+        <select required id='difficulty' ref={(input) => {_difficulty = input}}>
           <option value='Easy'>Easy</option>
           <option value='Moderate'>Moderate</option>
           <option value='Difficult'>Difficult</option>
         </select><br/>
         <input
+          required
           type='text'
           id='season'
-          placeholder='Season'
+          placeholder='Seasons lowercase'
           ref={(input) => {_season = input}}/><br/>
-        <select id='family' ref={(input) => {_family = input}}>
+        <select required id='family' ref={(input) => {_family = input}}>
           <option disabled>Family friendly?</option>
           <option value='true'>True</option>
           <option value='false'>False</option>
         </select><br/>
-        <select id='crowded' ref={(input) => {_crowded = input}}>
+        <select required id='crowded' ref={(input) => {_crowded = input}}>
           <option disabled>Crowded?</option>
           <option value='true'>True</option>
           <option value='false'>False</option>
         </select><br/>
         <input
+          required
           type='text'
           id='features'
           ref={(input) => {_features = input}}

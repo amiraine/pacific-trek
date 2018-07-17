@@ -17,8 +17,18 @@ function App(){
 
   return(
     <div>
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500,700');
+        * {
+          margin: 0;
+          padding: 0;
+
+        }
+        div{
+          border: 1px dashed grey;
+        }
+      `}</style>
       <Navigation/>
-      <NewHikeForm/>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/browse" component={Browse}/>
