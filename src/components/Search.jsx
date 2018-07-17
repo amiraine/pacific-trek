@@ -18,7 +18,6 @@ function Search(props){
       <div className='search-results'>
         {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
           var hike = props.hikeList.masterHikeList[hikeId];
-          console.log(hike);
           return <Hike
             name = {hike.name}
             img = {hike.img}
@@ -44,6 +43,5 @@ function Search(props){
 }
 Search.propTypes = {
   hikeList: PropTypes.object,
-
 }
 export default Search;

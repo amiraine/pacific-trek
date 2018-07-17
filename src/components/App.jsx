@@ -7,6 +7,7 @@ import Login from './Login';
 import Search from './Search';
 import Profile from './Profile';
 import NewHikeForm from './NewHikeForm';
+import Guide from './Guide';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import constants from './../constants';
@@ -41,6 +42,22 @@ class App extends React.Component {
               min-height: 100vh;
               max-width: 100vw;
             }
+            svg{
+              height: 78px;
+              width: 78px;
+
+            }
+            svg path{
+              fill: white;
+            }
+            .next, .prev{
+              z-index: 5;
+              position: absolute;
+            }
+            .next{
+              right: 0;
+
+            }
             `}</style>
           <Navigation/>
           <Switch>
@@ -50,6 +67,7 @@ class App extends React.Component {
             <Route path="/login" component={Login}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/admin" component={NewHikeForm}/>
+            <Route path="/guide" component={Guide}/>
           </Switch>
           <Footer/>
         </div>
