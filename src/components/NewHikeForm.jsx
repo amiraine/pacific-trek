@@ -17,12 +17,12 @@ function NewHikeForm(props){
   let _season = null;
   let _family = null;
   let _crowded  = null;
-  let _features = null;
+  let _features = [];
 
   function handleNewHikeSubmission(event){
     const { dispatch } = props;
     event.preventDefault();
-    dispatch(addHike(_name.value, _start.value, _end.value, _type.value, _length.value, _gain.value, _difficulty.value, _season.value, _family.value, _crowded.value, _features.value));
+    dispatch(addHike(_name.value, _start.value, _end.value, _type.value, _length.value, _gain.value, _difficulty.value, _season.value, _family.value, _crowded.value, _features.value.split(', ')));
 
     _name.value = '';
     _start.value = '';
