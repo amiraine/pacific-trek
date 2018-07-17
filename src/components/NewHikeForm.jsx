@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { v4 } from 'uuid';
 import constants from './../constants';
 const { c } = constants;
+import { addHike } from './../actions/index';
 
 function NewHikeForm(props){
   let _name = null;
@@ -18,37 +19,24 @@ function NewHikeForm(props){
   let _crowded  = null;
   let _features = null;
 
-  function handleNewHikeSubmission(e){
+  function handleNewHikeSubmission(event){
     const { dispatch } = props;
-    e.preventDefault();
-    const action = {
-      type: c.ADD_HIKE,
-      id: v4(),
-      name: _name.value,
-      start: _start.value,
-      end: _end.value,
-      type: _type.value,
-      length: _length.value,
-      gain: _gain.value,
-      difficulty: _difficulty.value,
-      season: _season.value,
-      family: _family.value,
-      crowded: _crowded.value,
-      features: _features.value.split(', ')
-    };
-    dispatch(action);
-    name: _name.value = '';
-    start: _start.value = '';
-    end: _end.value = '';
-    type: _type.value = '';
-    length: _length.value = '';
-    gain: _gain.value = '';
-    difficulty: _difficulty.value = '';
-    season: _season.value = '';
-    family: _family.value = '';
-    crowded: _crowded.value = '';
-    features: _features.value = '';
+    event.preventDefault();
+    dispatch(addHike(_name.value, _start.value, _end.value, _type.value, _length.value, _gain.value, _difficulty.value, _season.value, _family.value, _crowded.value, _features.value));
+
+    _name.value = '';
+    _start.value = '';
+    _end.value = '';
+    _type.value = '';
+    _length.value = '';
+    _gain.value = '';
+    _difficulty.value = '';
+    _season.value = '';
+    _family.value = '';
+    _crowded.value = '';
+    _features.value = '';
   }
+
   return(
     <div className='form-container'>
       <style>{`
@@ -114,9 +102,9 @@ function NewHikeForm(props){
           id='features'
           ref={(input) => {_features = input}}
           placeholder='Features, lower-case separated by commas and spaces'/><br/>
-        <button type='submit' id='submit'>Submit</button>
+        <button type='submit'>Submit</button>
       </form>
     </div>
-  )
+  );
 }
 export default connect()(NewHikeForm);
