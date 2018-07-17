@@ -3,9 +3,8 @@ import Hike from './Hike';
 import PropTypes from 'prop-types';
 
 function Search(props){
-  console.log(props.hikeList.masterHikeList);
   return(
-    <div>
+    <div className='search-results'>
       {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
         var hike = props.hikeList.masterHikeList[hikeId];
         console.log(hike);

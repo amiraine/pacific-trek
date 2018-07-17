@@ -12,6 +12,8 @@ import PropTypes from 'prop-types';
 import constants from './../constants';
 const { c } = constants;
 import * as actions from './../actions';
+import Footer from './Footer';
+
 
 class App extends React.Component {
   componentWillMount(){
@@ -34,6 +36,11 @@ class App extends React.Component {
             div{
               border: 1px dashed grey;
             }
+            body{
+              position: relative;
+              min-height: 100vh;
+              max-width: 100vw;
+            }
             `}</style>
           <Navigation/>
           <Switch>
@@ -42,7 +49,9 @@ class App extends React.Component {
             <Route path="/search" render= {()=><Search hikeList={this.props.masterHikeList}/>}/>
             <Route path="/login" component={Login}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/admin" component={NewHikeForm}/>
           </Switch>
+          <Footer/>
         </div>
       );
   }
