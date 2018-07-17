@@ -14,13 +14,30 @@ function Hike(props){
     dispatch(action);
   }
   return(
-    <div>
+    <div className='hike-module'>
+      <style jsx>{`
+        .hike-module{
+          height: 250px;
+          display: grid;
+          grid-template-columns: 250px 1fr;
+        }
+        img{
+          object-fit: cover;
+          width: 250px;
+          height: 250px;
+        }
+      `}</style>
+    <div className="image">
+      <img src={props.img}/>
+    </div>
       {props.name}
+
     </div>
   )
 }
 Hike.propTypes = {
   name: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
   start: PropTypes.string.isRequired,
   end: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,

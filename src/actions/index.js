@@ -5,9 +5,10 @@ import Firebase from 'firebase';
 firebase.initializeApp(firebaseConfig);
 const hikes = firebase.database().ref('hikes');
 
-export function addHike(_name, _start, _end, _type, _length, _gain, _difficulty, _season, _family, _crowded, _features){
+export function addHike(_name, _img, _start, _end, _type, _length, _gain, _difficulty, _season, _family, _crowded, _features){
   return () => hikes.push({
     name: _name,
+    img: _img,
     start: _start,
     end: _end,
     type: _type,

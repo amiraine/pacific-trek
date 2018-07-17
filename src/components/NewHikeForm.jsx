@@ -8,6 +8,7 @@ import { addHike } from './../actions/index';
 
 function NewHikeForm(props){
   let _name = null;
+  let _img = null;
   let _start = null;
   let _end = null;
   let _type = null;
@@ -23,9 +24,10 @@ function NewHikeForm(props){
   function handleNewHikeSubmission(event){
     const { dispatch } = props;
     event.preventDefault();
-    dispatch(addHike(_name.value, _start.value, _end.value, _type.value, parseInt(_length.value), parseInt(_gain.value), _difficulty.value, _season.value.split(', '), _family.value, _crowded.value, _features.value.split(', ')));
+    dispatch(addHike(_name.value, _img.value, _start.value, _end.value, _type.value, parseFloat(_length.value), parseInt(_gain.value), _difficulty.value, _season.value.split(', '), _family.value, _crowded.value, _features.value.split(', ')));
 
     _name.value = '';
+    _img.value = '';
     _start.value = '';
     _end.value = '';
     _type.value = '';
@@ -53,6 +55,12 @@ function NewHikeForm(props){
           id='name'
           placeholder='Hike name'
           ref={(input) => {_name = input;}}/><br/>
+        <input
+          required
+          type = 'text'
+          id = 'img'
+          placeholder = 'image url'
+          ref = {(input) => {_img = input;}}/><br/>
         <input
           required
           type='text'
