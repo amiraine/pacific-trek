@@ -14,14 +14,13 @@ function Hike(props){
     dispatch(action)
   }
   return(
-    <div className='hike-module'>
+    <div className='hike-module wrapper'>
       <style jsx>{`
         .hike-module{
           height: 10vw;
           display: grid;
           grid-template-columns: 10vw 1fr;
           margin-bottom: 10px;
-          background-color: #d8ffbf;
         }
         .hike-info{
           padding:10px;

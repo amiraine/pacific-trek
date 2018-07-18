@@ -53,7 +53,9 @@ class App extends React.Component {
             }
             .next{
               right: 0;
-
+            }
+            .wrapper{
+              background-color: #d8ffbf;
             }
             `}</style>
         <Navigation/>
