@@ -71,13 +71,14 @@ Simply visit the website [url goes here]
 7/13/17 2:40pm still configuring firebase
 
 7/18/18 To do list
-* format hike modules
+* ~~format hike modules on Search~~
 * implement search filters
 * get smaller banner images
 * browse hikes link (add filters)
 * at least design a login page
 * hiking guide pictures
 * dynamic routing
+* media queries
 
 ### <a name="credit"></a> Credits and licenses
 ##### This project was developed as a capstone for Epicodus by Ami Cooper

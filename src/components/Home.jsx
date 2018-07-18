@@ -15,10 +15,24 @@ class Home extends React.Component {
     this.prevSlide = this.prevSlide.bind(this)
   }
   nextSlide(){
-    this.setState({slideNumber: this.state.slideNumber+1 })
+    if (this.state.slideNumber === 3){
+      this.setState({
+        slideNumber: this.state.slideNumber = 1
+      })
+    } else {
+      this.setState({
+        slideNumber: this.state.slideNumber+1
+      })
+    }
   }
   prevSlide(){
-    this.setState({slideNumber: this.state.slideNumber-1})
+    if(this.state.slideNumber < 1){
+      this.setState({
+        slideNumber: this.state.slideNumber = 3
+      })
+    } else {
+      this.setState({slideNumber: this.state.slideNumber-1})
+    }
   }
 
   render(){
