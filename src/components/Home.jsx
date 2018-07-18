@@ -1,18 +1,18 @@
-import React from 'react';
-import Slide1 from './Slide1';
-import Slide2 from './Slide2';
-import Slide3 from './Slide3';
-import NextArrow from './NextArrow';
-import PrevArrow from './PrevArrow';
+import React from 'react'
+import Slide1 from './Slide1'
+import Slide2 from './Slide2'
+import Slide3 from './Slide3'
+import NextArrow from './NextArrow'
+import PrevArrow from './PrevArrow'
 
 class Home extends React.Component {
   constructor(props){
-    super(props);
+    super(props)
     this.state = {
       slideNumber: 1
     }
-    this.nextSlide = this.nextSlide.bind(this);
-    this.prevSlide = this.prevSlide.bind(this);
+    this.nextSlide = this.nextSlide.bind(this)
+    this.prevSlide = this.prevSlide.bind(this)
   }
   nextSlide(){
     this.setState({slideNumber: this.state.slideNumber+1 })
@@ -39,8 +39,8 @@ class Home extends React.Component {
         {this.state.slideNumber === 3 ? <Slide3/> : null}
         <NextArrow nextSlide={this.nextSlide}/>
       </div>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home

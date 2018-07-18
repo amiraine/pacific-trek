@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 function Slide1(){
   return(
@@ -21,8 +21,8 @@ function Slide1(){
           font-family: 'Alegreya Sans SC', sans-serif;
         }
       `}</style>
-    <h1>Explore the Pacific Northwest</h1>
+      <h1>Explore the Pacific Northwest</h1>
     </div>
-  );
+  )
 }
-export default Slide1;
+export default Slide1

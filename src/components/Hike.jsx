@@ -1,17 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import constants from './../constants';
-const { c } = constants;
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import constants from './../constants'
+const { c } = constants
 
 function Hike(props){
   function handleSavingHike(hikeId){
-    const {dispatch} = props;
+    const {dispatch} = props
     const action = {
       type: 'SELECT_HIKE',
       hikeId: hikeId
-    };
-    dispatch(action);
+    }
+    dispatch(action)
   }
   return(
     <div className='hike-module'>
@@ -57,4 +57,4 @@ Hike.propTypes = {
   crowded: PropTypes.string.isRequired,
   features: PropTypes.array.isRequired
 }
-export default connect()(Hike);
+export default connect()(Hike)

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Slide2(){
   return(
@@ -23,11 +23,11 @@ function Slide2(){
           text-shadow: 2px 2px 5px black;
         }
       `}</style>
-    <Link to='/guide' style={{ textDecoration: 'none', color: 'white'}}>
+      <Link to='/guide' style={{ textDecoration: 'none', color: 'white'}}>
         <h1>New to this site?</h1>
         <h2>Click here to check out our guide</h2>
       </Link>
     </div>
-  );
+  )
 }
-export default Slide2;
+export default Slide2

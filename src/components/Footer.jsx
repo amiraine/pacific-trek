@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer(){
-  let today = new Date();
-  let year = today.getFullYear();
+  let today = new Date()
+  let year = today.getFullYear()
   return(
     <div className='footer'>
       <style jsx>{`
@@ -17,6 +17,6 @@ function Footer(){
       `}</style>
       <sub>©{year} PacificTrek & Ami Cooper <Link to='/admin'>add new hikes</Link></sub>
     </div>
-  );
+  )
 }
-export default Footer;
+export default Footer

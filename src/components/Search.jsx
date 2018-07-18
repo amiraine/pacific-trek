@@ -1,6 +1,6 @@
-import React from 'react';
-import Hike from './Hike';
-import PropTypes from 'prop-types';
+import React from 'react'
+import Hike from './Hike'
+import PropTypes from 'prop-types'
 
 function Search(props){
   return(
@@ -17,7 +17,7 @@ function Search(props){
       `}</style>
       <div className='search-results'>
         {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
-          var hike = props.hikeList.masterHikeList[hikeId];
+          var hike = props.hikeList.masterHikeList[hikeId]
           return <Hike
             name = {hike.name}
             img = {hike.img}
@@ -32,16 +32,16 @@ function Search(props){
             crowded = {hike.crowded}
             features = {hike.features}
             key = {hikeId}
-            hikeId = {hikeId}/>;
+            hikeId = {hikeId}/>
         })}
       </div>
       <div className='map'>
         map goes here
       </div>
     </div>
-  );
+  )
 }
 Search.propTypes = {
   hikeList: PropTypes.object,
 }
-export default Search;
+export default Search

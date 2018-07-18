@@ -1,43 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { v4 } from 'uuid';
-import constants from './../constants';
-const { c } = constants;
-import { addHike } from './../actions/index';
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { v4 } from 'uuid'
+import constants from './../constants'
+const { c } = constants
+import { addHike } from './../actions/index'
 
 function NewHikeForm(props){
-  let _name = null;
-  let _img = null;
-  let _start = null;
-  let _end = null;
-  let _type = null;
-  let _length = null;
-  let _gain = null;
-  let _difficulty = null;
-  let _season = null;
-  let _family = null;
-  let _crowded  = null;
-  let _fees = null;
-  let _features = null;
+  let _name = null
+  let _img = null
+  let _start = null
+  let _end = null
+  let _type = null
+  let _length = null
+  let _gain = null
+  let _difficulty = null
+  let _season = null
+  let _family = null
+  let _crowded  = null
+  let _fees = null
+  let _features = null
 
   function handleNewHikeSubmission(event){
-    const { dispatch } = props;
-    event.preventDefault();
-    dispatch(addHike(_name.value, _img.value, _start.value, _end.value, _type.value, parseFloat(_length.value), parseInt(_gain.value), _difficulty.value, _season.value.split(', '), _family.value, _crowded.value, _features.value.split(', ')));
+    const { dispatch } = props
+    event.preventDefault()
+    dispatch(addHike(_name.value, _img.value, _start.value, _end.value, _type.value, parseFloat(_length.value), parseInt(_gain.value), _difficulty.value, _season.value.split(', '), _family.value, _crowded.value, _features.value.split(', ')))
 
-    _name.value = '';
-    _img.value = '';
-    _start.value = '';
-    _end.value = '';
-    _type.value = '';
-    _length.value = '';
-    _gain.value = '';
-    _difficulty.value = '';
-    _season.value = '';
-    _family.value = '';
-    _crowded.value = '';
-    _features.value = '';
+    _name.value = ''
+    _img.value = ''
+    _start.value = ''
+    _end.value = ''
+    _type.value = ''
+    _length.value = ''
+    _gain.value = ''
+    _difficulty.value = ''
+    _season.value = ''
+    _family.value = ''
+    _crowded.value = ''
+    _features.value = ''
   }
 
   return(
@@ -54,13 +54,13 @@ function NewHikeForm(props){
           type='text'
           id='name'
           placeholder='Hike name'
-          ref={(input) => {_name = input;}}/><br/>
+          ref={(input) => {_name = input}}/><br/>
         <input
           required
           type = 'text'
           id = 'img'
           placeholder = 'image url'
-          ref = {(input) => {_img = input;}}/><br/>
+          ref = {(input) => {_img = input}}/><br/>
         <input
           required
           type='text'
@@ -122,6 +122,6 @@ function NewHikeForm(props){
         <button type='submit'>Submit</button>
       </form>
     </div>
-  );
+  )
 }
-export default connect()(NewHikeForm);
+export default connect()(NewHikeForm)

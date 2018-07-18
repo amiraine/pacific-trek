@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import trees from '../../src/assets/images/logo.svg';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import trees from '../../src/assets/images/logo.svg'
 
 function Navigation(){
   return(
@@ -52,6 +52,6 @@ function Navigation(){
         </div>
       </div>
     </div>
-  );
+  )
 }
-export default Navigation;
+export default Navigation

@@ -1,8 +1,8 @@
-import hikeListReducer from './hike-list-reducer';
-import { combineReducers } from 'redux';
+import hikeListReducer from './hike-list-reducer'
+import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
   masterHikeList: hikeListReducer
-});
+})
 
-export default rootReducer;
+export default rootReducer
