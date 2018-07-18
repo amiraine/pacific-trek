@@ -39,7 +39,7 @@ function Guide(){
         <div className='info-module'>
           <h2>Double-check trail information</h2>
           <h5>This website is maintained by one person and information may not be current. You can check the homepage to see when the site was last updated.</h5>
-          <a href="https://gorgefriends.org/hike-the-gorge/trail-alerts.html">Click here to see trail alerts</a>
+          <a href="https://gorgefriends.org/hike-the-gorge/trail-alerts.html" target='blank'>Click here to see trail alerts</a>
         </div>
         <div className='info-module'>
           <h2>Wear comfortable clothing and shoes</h2>

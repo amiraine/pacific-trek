@@ -67,7 +67,17 @@ Simply visit the website [url goes here]
 
 ### <a name="log"></a> Project Log
 7/13/17 2:00pm working on setting up a firebase, made JSON for project directory
+
 7/13/17 2:40pm still configuring firebase
+
+7/18/18 To do list
+* format hike modules
+* implement search filters
+* get smaller banner images
+* browse hikes link (add filters)
+* at least design a login page
+* hiking guide pictures
+* dynamic routing
 
 ### <a name="credit"></a> Credits and licenses
 ##### This project was developed as a capstone for Epicodus by Ami Cooper
