@@ -14,12 +14,18 @@ function Hike(props){
     dispatch(action)
   }
   return(
-    <div className='hike-module wrapper'>
+    <div className='hike-module'>
       <style jsx>{`
         .hike-module{
           height: 10vw;
           display: grid;
           grid-template-columns: 10vw 1fr;
+          margin-bottom: 10px;
+          background-color: #8ce6ff;
+          color: #002e3a;
+          font-family: 'Helvetica Neue', sans-serif;
+        }
+        .hike-name{
           margin-bottom: 10px;
         }
         .hike-info{
@@ -35,8 +41,10 @@ function Hike(props){
         <img src={props.img}/>
       </div>
       <div className='hike-info'>
-        <strong>{props.name}</strong><br/>
-        {props.difficulty}<br/>
+        <div className='hike-name'>
+          <strong>{props.name}</strong><br/>
+        </div>
+        Difficulty: {props.difficulty}<br/>
         {props.length} miles<br/>
         {props.gain} ft. elevation gain
       </div>
