@@ -32,10 +32,7 @@ class App extends React.Component {
             * {
               margin: 0;
               padding: 0;
-
-            }
-            div{
-              border: 1px dashed grey;
+              box-sizing: border-box;
             }
             body{
               position: relative;

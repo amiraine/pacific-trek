@@ -17,21 +17,29 @@ function Hike(props){
     <div className='hike-module'>
       <style jsx>{`
         .hike-module{
-          height: 250px;
+          height: 10vw;
           display: grid;
-          grid-template-columns: 250px 1fr;
+          grid-template-columns: 10vw 1fr;
+          margin-bottom: 10px;
+          background-color: #d8ffbf;
+        }
+        .hike-info{
+          padding:10px;
         }
         img{
           object-fit: cover;
-          width: 250px;
-          height: 250px;
+          width: 10vw;
+          height: 10vw;
         }
       `}</style>
-    <div className="image">
-      <img src={props.img}/>
-    </div>
-      {props.name}
-
+      <div className="image">
+        <img src={props.img}/>
+      </div>
+      <div className='hike-info'>
+        {props.name}
+        {props.difficulty}
+        {props.length}
+      </div>
     </div>
   )
 }
