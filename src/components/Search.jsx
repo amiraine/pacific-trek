@@ -3,6 +3,7 @@ import Hike from './Hike'
 import PropTypes from 'prop-types'
 
 function Search(props){
+  console.log(props.hikeList.masterHikeList);
   return(
     <div className='search-wrapper'>
       <style>{`

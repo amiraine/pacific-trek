@@ -35,9 +35,10 @@ function Hike(props){
         <img src={props.img}/>
       </div>
       <div className='hike-info'>
-        {props.name}
-        {props.difficulty}
-        {props.length}
+        <strong>{props.name}</strong><br/>
+        {props.difficulty}<br/>
+        {props.length} miles<br/>
+        {props.gain} ft. elevation gain
       </div>
     </div>
   )
