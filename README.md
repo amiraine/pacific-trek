@@ -20,10 +20,11 @@ The focus is to create a guide that's easy to use with a clean interface that al
 ### <a name="mvp"></a> MVP and Reach goals
 |MVP|Reach Goals|
 |--|--|
-| - Hike objects are displayed on the search page and are filterable by checkbox/text input criteria | - User login (via Google accounts)|
+| - Hike objects are displayed on the search page | - User login (via Google accounts)|
 | - Hike detail pages with dynamic routing | - Google maps for trailheads |
-| --- | - Comment/rating system for each hike |
+| - Hike objects are filterable by checkbox/text input criteria | - Comment/rating system for each hike |
 | --- | - Administrative ability from site (edit database without directly editing through Firebase)|
+| --- | Allow users to add hikes to a 'wishlist' |
 
 ### <a name="wireframes"></a>Wireframes
 *The wireframes are only a prototype and the final project is subject to change*
@@ -42,7 +43,6 @@ The focus is to create a guide that's easy to use with a clean interface that al
 * HTML/CSS
 * React
 * Firebase
-* Google Maps
 
 ### <a name="setup"></a>Installation and setup instructions
 #### For users:

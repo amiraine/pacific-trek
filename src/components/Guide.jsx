@@ -38,7 +38,7 @@ function Guide(){
       <div className='guide wrapper'>
         <div className='info-module'>
           <h2>Double-check trail information</h2>
-          <h5>This website is maintained by one person and information may not be current. You can check the homepage to see when the site was last updated.</h5>
+          <h5>This website is maintained by one person and some information, such as if the trail is currently open may not be current. You can check the homepage to see when the site was last updated.</h5>
           <a href="https://gorgefriends.org/hike-the-gorge/trail-alerts.html" target='blank'>Click here to see trail alerts</a>
         </div>
         <div className='info-module'>
