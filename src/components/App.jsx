@@ -18,6 +18,21 @@ import Error404 from './Error404';
 import HikeDetail from './HikeDetail';
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state  = {
+      searchTerm: '',
+      urlId: ''
+    }
+    this.handleUrlId = this.handleUrlId.bind(this)
+  }
+
+  handleUrlId(id){
+    this.setState({
+      urlId: id
+    });
+  }
+
   componentWillMount(){
     const { dispatch } = this.props
     const { watchFirebaseHikesRef } = actions
@@ -68,8 +83,9 @@ class App extends React.Component {
             component={Browse}/>
           <Route
             path="/search"
-            render= {()=>
-            <Search hikeList={this.props.masterHikeList}/>
+            render= {(props)=>
+            <Search hikeList={this.props.masterHikeList}
+            handleUrlId={this.handleUrlId}/>
           }/>
           <Route
             path="/login"
@@ -85,7 +101,7 @@ class App extends React.Component {
             component={Guide}/>
           <Route
             path="/hike/:id"
-            render={()=>
+            render={(props)=>
             <HikeDetail hikeList={this.props.masterHikeList}/>
           }/>
           <Route
