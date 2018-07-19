@@ -15,6 +15,7 @@ const { c } = constants;
 import * as actions from './../actions';
 import Footer from './Footer';
 import Error404 from './Error404';
+import HikeDetail from './HikeDetail';
 
 class App extends React.Component {
   componentWillMount(){
@@ -60,8 +61,6 @@ class App extends React.Component {
         <Navigation/>
         <Switch>
           <Route
-            component={Error404}/>
-          <Route
             exact path="/"
             component={Home}/>
           <Route
@@ -85,10 +84,12 @@ class App extends React.Component {
             path="/guide"
             component={Guide}/>
           <Route
-            path="/hike:id"
+            path="/hike/:id"
             render={()=>
             <HikeDetail hikeList={this.props.masterHikeList}/>
           }/>
+          <Route
+            component={Error404}/>
         </Switch>
         <Footer/>
       </div>

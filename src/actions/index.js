@@ -35,7 +35,7 @@ export function watchFirebaseHikesRef(){
       const newHike = Object.assign({}, data.val(), {
         id: data.getKey(),
       })
-      dispatch(receiveHike(newHike))
-    })
-  }
+      dispatch(receiveHike(newHike));
+    });
+  };
 }

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import constants from './../constants'
 const { c } = constants
+import { Link } from 'react-router-dom';
 
 function Hike(props){
   function handleSavingHike(hikeId){
@@ -42,11 +43,14 @@ function Hike(props){
       </div>
       <div className='hike-info'>
         <div className='hike-name'>
-          <strong>{props.name}</strong><br/>
+          <Link to={`/hike/${props.hikeId}`}>
+            <strong>{props.name}</strong><br/>
+          </Link>
         </div>
         Difficulty: {props.difficulty}<br/>
         {props.length} miles<br/>
         {props.gain} ft. elevation gain
+        {props.$key}
       </div>
     </div>
   )
@@ -54,6 +58,7 @@ function Hike(props){
 Hike.propTypes = {
   name: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
+  key: PropTypes.string,
   start: PropTypes.string.isRequired,
   end: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,

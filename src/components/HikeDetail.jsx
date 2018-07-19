@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
-function(props){
+function HikeDetail(props){
   return(
     <div>
-      detail
+      <h1>TEST</h1>
+      {props.name}
     </div>
   )
 }
-
-export default
+export default HikeDetail;
