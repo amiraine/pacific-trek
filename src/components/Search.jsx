@@ -16,8 +16,8 @@ function Search(props){
               }
             `}</style>
             <div className='search-results'>
-              <SearchResults hikeList={this.props.hikeList}
-              handleUrlId={this.props.handleUrlId}/>
+              <SearchResults hikeList={props.hikeList}
+              handleUrlId={props.handleUrlId}/>
             </div>
             <div className='map'>
               map goes here
@@ -59,7 +59,7 @@ function Search(props){
 // }
 
 Search.propTypes = {
-  handleUrlId: PropTypes.function
+  handleUrlId: PropTypes.func
 }
 
 export default Search;

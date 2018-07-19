@@ -3,12 +3,14 @@ import Hike from './Hike'
 import PropTypes from 'prop-types'
 
 function SearchResults(props){
+
   return(
     <div>
       {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
         var hike = props.hikeList.masterHikeList[hikeId]
+        console.log();
         return <Hike
-          onClick = {props.handleUrlId(hikeId)}
+          handleUrlId = {props.handleUrlId}
           name = {hike.name}
           img = {hike.img}
           start = {hike.start}
@@ -29,6 +31,6 @@ function SearchResults(props){
 }
 SearchResults.propTypes = {
   hikeList: PropTypes.object,
-  handleUrlId: PropTypes.function
+  handleUrlId: PropTypes.func
 }
 export default SearchResults;

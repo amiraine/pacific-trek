@@ -26,11 +26,11 @@ class App extends React.Component {
     }
     this.handleUrlId = this.handleUrlId.bind(this)
   }
-
   handleUrlId(id){
     this.setState({
       urlId: id
     });
+    console.log(this.state.urlId);
   }
 
   componentWillMount(){

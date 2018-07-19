@@ -15,7 +15,7 @@ function Hike(props){
     dispatch(action)
   }
   return(
-    <div className='hike-module'>
+    <div className='hike-module' onClick = {() => props.handleUrlId(props.hikeId)}>
       <style jsx>{`
         .hike-module{
           height: 10vw;
