@@ -4,7 +4,7 @@ import Error404 from './Error404';
 function HikeDetail(props){
   const currentLocation = props.urlId;
   const currentHikeObject = props.hikeList.masterHikeList;
-
+  console.log(currentHikeObject);
   // Solution with a for loop
   // for(var i = 0; i < props.hikeList.length; )
   // add this conditional
