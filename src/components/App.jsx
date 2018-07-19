@@ -24,15 +24,19 @@ class App extends React.Component {
       searchTerm: '',
       urlId: ''
     }
-    this.handleUrlId = this.handleUrlId.bind(this)
+    this.handleUrlId = this.handleUrlId.bind(this);
+    this.handleResetUrlId = this.handleUrlId.bind(this);
   }
   handleUrlId(id){
     this.setState({
       urlId: id
     });
-    console.log(this.state.urlId);
   }
-
+  handleResetUrlId(){
+    this.setState({
+      urlId: ''
+    });
+  }
   componentWillMount(){
     const { dispatch } = this.props
     const { watchFirebaseHikesRef } = actions
@@ -102,7 +106,8 @@ class App extends React.Component {
           <Route
             path="/hike/:id"
             render={(props)=>
-            <HikeDetail hikeList={this.props.masterHikeList}/>
+            <HikeDetail hikeList={this.props.masterHikeList}
+            resetUrlId={this.handleResetUrlId}/>
           }/>
           <Route
             component={Error404}/>
