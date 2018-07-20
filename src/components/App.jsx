@@ -7,14 +7,11 @@ import PropTypes from 'prop-types';
 import Navigation from './Navigation';
 import Browse from './Browse';
 import Home from './Home';
-import Login from './Login';
 import Search from './Search';
-import Profile from './Profile';
 import NewHikeForm from './NewHikeForm';
 import Guide from './Guide';
 import Footer from './Footer';
 import Error404 from './Error404';
-import HikeDetail from './HikeDetail';
 //constants and actions
 import constants from './../constants';
 const { c } = constants;
@@ -72,30 +69,14 @@ class App extends React.Component {
           <Route
             path="/search"
             render= {(props)=>
-            <Search hikeList={this.props.masterHikeList}
-            handleUrlId={this.handleUrlId}
-            handleOpenModal = {this.handleOpenModal}
-            handleCloseModal = {this.handleCloseModal}
-            selectedHikeId = {this.state.selectedHikeId}/>
-          }/>
-          <Route
-            path="/login"
-            component={Login}/>
-          <Route
-            path="/profile"
-            component={Profile}/>
+            <Search
+              hikeList={this.props.masterHikeList}/>}/>
           <Route
             path="/admin"
             component={NewHikeForm}/>
           <Route
             path="/guide"
             component={Guide}/>
-          <Route
-            path="/hike/:id"
-            render={(props)=>
-            <HikeDetail hikeList={this.props.masterHikeList}
-            resetUrlId={this.handleResetUrlId}/>
-          }/>
           <Route
             component={Error404}/>
         </Switch>
@@ -111,7 +92,6 @@ App.propTypes ={
 
 const mapStateToProps = state => {
   return {
-    selectedHikeId: state.selectedHikeId,
     masterHikeList: state.masterHikeList
   };
 };

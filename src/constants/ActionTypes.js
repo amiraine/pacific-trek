@@ -1,2 +1,4 @@
-export const ADD_HIKE = 'ADD_HIKE'
-export const RECEIVE_HIKE = 'RECEIVE_HIKE'
+export default {
+  ADD_HIKE: "ADD_HIKE",
+  RECEIVE_HIKE: "RECEIVE_HIKE"
+}

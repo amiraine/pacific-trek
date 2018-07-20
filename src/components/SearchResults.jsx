@@ -8,10 +8,7 @@ function SearchResults(props){
     <div>
       {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
         var hike = props.hikeList.masterHikeList[hikeId]
-        console.log();
         return <Hike
-          handleOpenModal = {props.handleOpenModal}
-          handleCloseModal = {props.handleCloseModal}
           name = {hike.name}
           img = {hike.img}
           start = {hike.start}
@@ -31,9 +28,6 @@ function SearchResults(props){
   )
 }
 SearchResults.propTypes = {
-  hikeList: PropTypes.object,
-  handleUrlId: PropTypes.func,
-  handleOpenModal: PropTypes.func,
-  handleCloseModal: PropTypes.func
+  hikeList: PropTypes.object
 }
 export default SearchResults;

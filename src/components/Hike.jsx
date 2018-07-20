@@ -3,20 +3,19 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import constants from './../constants'
 const { c } = constants
-import { Link } from 'react-router-dom';
 
 function Hike(props){
   function handleSavingHike(hikeId){
-    const {dispatch} = props
+    const { dispatch } = props;
     const action = {
-      type: 'SELECT_HIKE',
+      type: c.SELECT_HIKE,
       hikeId: hikeId
-    }
-    dispatch(action)
+    };
+    dispatch(action);
   }
 
   return(
-    <div className='hike-module' onClick = {() => props.handleOpenModal(props.hikeId)}>
+    <div className='hike-module'>
       <style jsx>{`
         .hike-module{
           height: 10vw;
@@ -44,9 +43,7 @@ function Hike(props){
       </div>
       <div className='hike-info'>
         <div className='hike-name'>
-          <Link to={`/hike/${props.hikeId}`}>
-            <strong>{props.name}</strong><br/>
-          </Link>
+          <strong>{props.name}</strong><br/>
         </div>
         Difficulty: {props.difficulty}<br/>
         {props.length} miles<br/>
@@ -59,7 +56,7 @@ function Hike(props){
 Hike.propTypes = {
   name: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
-  key: PropTypes.string,
+  id: PropTypes.string,
   start: PropTypes.string.isRequired,
   end: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
@@ -71,4 +68,4 @@ Hike.propTypes = {
   crowded: PropTypes.string.isRequired,
   features: PropTypes.array.isRequired
 }
-export default connect()(Hike)
+export default connect()(Hike);
