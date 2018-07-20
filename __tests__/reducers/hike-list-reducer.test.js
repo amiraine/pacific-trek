@@ -2,6 +2,7 @@ import hikeListReducer from './../../src/reducers/hike-list-reducer';
 import c from './../../src/constants';
 
 describe('hikeListReducer', ()=>{
+
   let action;
   const sampleHikeData = {
     name: 'Triple Falls Loop',
@@ -12,10 +13,10 @@ describe('hikeListReducer', ()=>{
     length: 3.5,
     gain: 200,
     difficulty: 'Easy',
-    season: 'spring',
+    season: [spring],
     family: 'true',
     crowded: 'true',
-    features: 'waterfall',
+    features: [waterfall],
     id: 'longstringfromfirebase'
   };
 

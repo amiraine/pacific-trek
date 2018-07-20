@@ -18,11 +18,16 @@ const { c } = constants;
 import * as actions from './../actions';
 
 class App extends React.Component {
+
   componentWillMount(){
     const { dispatch } = this.props;
     const { watchFirebaseHikesRef } = actions;
     dispatch(watchFirebaseHikesRef());
+    // console.log(this.props.masterHikeList); -- this log returns an empty Object
+    // console.log(this.props.hikeList); -- this log returns undefined
+    // console.log(this.props.hikeList.masterHikeList); -- this logs nothing
   }
+
   render(){
     return(
       <div>

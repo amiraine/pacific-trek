@@ -35,7 +35,7 @@ export function watchFirebaseHikesRef(){
       const newHike = Object.assign(
         {}, data.val(), { id: data.getKey(),
       });
-      // console.log(newHike);
+      // console.log(newHike); -- this log actually retrieves every hike object
       dispatch(receiveHike(newHike));
     });
   };

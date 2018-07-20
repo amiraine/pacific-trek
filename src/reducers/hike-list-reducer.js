@@ -1,6 +1,5 @@
 import constants from './../constants';
 const { types } = constants;
-import { getFirebaseHikes } from './../actions';
 
 export default (state = {}, action) =>{
   let newState;
@@ -11,6 +10,7 @@ export default (state = {}, action) =>{
       newState = Object.assign({}, state);
       newState[action.hike.id] = action.hike;
       return newState;
+      
     case types.ADD_HIKE:
       newState = Object.assign({}, state, {
         [id]: {
