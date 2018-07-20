@@ -3,7 +3,7 @@ const { types } = constants;
 
 export default (state = {}, action) =>{
   let newState;
-  const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features} = action;
+  const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features } = action;
 
   switch (action.type){
     case types.RECEIVE_HIKE:

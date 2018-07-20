@@ -1,7 +1,7 @@
 import hikeListReducer from './../../src/reducers/hike-list-reducer';
 import c from './../../src/constants';
 
-describe('hikeListReducer', ()=>{
+describe('hikeListReducer', () => {
 
   let action;
   const sampleHikeData = {
@@ -13,10 +13,11 @@ describe('hikeListReducer', ()=>{
     length: 3.5,
     gain: 200,
     difficulty: 'Easy',
-    season: [spring],
+    season: '[spring]',
     family: 'true',
     crowded: 'true',
-    features: [waterfall]
+    features: '[waterfall]',
+    id: 'string'
   };
 
   test('should return default state if no action type is recognized', () => {
@@ -24,7 +25,7 @@ describe('hikeListReducer', ()=>{
   });
 
   test('should add new hike date to masterHikeList', () =>{
-    const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features } = sampleHikeData;
+    const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features, id } = sampleHikeData;
     action = {
       type: c.ADD_HIKE,
       name: name,
@@ -38,7 +39,8 @@ describe('hikeListReducer', ()=>{
       season: season,
       family: family,
       crowded: crowded,
-      features: features
+      features: features,
+      id: id
     };
     expect(hikeListReducer({}, action)).toEqual({
       [id] : {
@@ -53,7 +55,8 @@ describe('hikeListReducer', ()=>{
         season: season,
         family: family,
         crowded: crowded,
-        features: features
+        features: features,
+        id: id
       }
     });
   });

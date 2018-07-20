@@ -1,32 +1,33 @@
-//standard libraries
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-//My components
 import Navigation from './Navigation';
 import Browse from './Browse';
 import Home from './Home';
+import Login from './Login';
 import Search from './Search';
 import NewHikeForm from './NewHikeForm';
 import Guide from './Guide';
+import PropTypes from 'prop-types';
+import constants from './../constants';
 import Footer from './Footer';
 import Error404 from './Error404';
-//constants and actions
-import constants from './../constants';
-const { c } = constants;
+import firebase from 'firebase';
 import * as actions from './../actions';
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state  = {
 
-  componentWillMount(){
-    const { dispatch } = this.props;
-    const { watchFirebaseHikesRef } = actions;
-    dispatch(watchFirebaseHikesRef());
-    // console.log(this.props.masterHikeList); -- this log returns an empty Object
-    // console.log(this.props.hikeList); -- this log returns undefined
-    // console.log(this.props.hikeList.masterHikeList); -- this logs nothing
+    }
+
   }
+  componentWillMount() {
+     const { dispatch } = this.props;
+     const { watchFirebaseHikesRef } = actions;
+     dispatch(watchFirebaseHikesRef());
+   }
 
   render(){
     return(
@@ -61,6 +62,34 @@ class App extends React.Component {
             .wrapper{
               background-color: #d8ffbf;
             }
+            .slide{
+              width: 100vw;
+              max-height: 1500px;
+              min-height: 50vh;
+              background-position: bottom;
+              background-attachment: fixed;
+              background-size: cover;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+              text-align: center;
+              font-size: 4em;
+              font-family: 'Alegreya Sans SC', sans-serif;
+              text-shadow: 2px 2px 5px black;
+              animation: 1.5s fadein ease-in 0s 1;
+            }
+            .transition-wrapper{
+              animation: 1s fadein ease-in 0s 1;
+            }
+            @keyframes fadein {
+              0%{
+                opacity: 0;
+              }
+              100%{
+                opacity: 100;
+              }
+            }
             `}</style>
         <Navigation/>
         <Switch>
@@ -73,8 +102,11 @@ class App extends React.Component {
           <Route
             path="/search"
             render= {(props)=>
-            <Search
-              hikeList={this.props.masterHikeList}/>}/>
+            <Search/>
+          }/>
+          <Route
+            path="/login"
+            component={Login}/>
           <Route
             path="/admin"
             component={NewHikeForm}/>
@@ -87,12 +119,12 @@ class App extends React.Component {
         <Footer/>
       </div>
     )
-  }
-}
+  };
+};
 
-App.propTypes ={
+App.propTypes = {
   masterHikeList: PropTypes.object
-}
+};
 
 const mapStateToProps = state => {
   return {

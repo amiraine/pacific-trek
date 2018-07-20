@@ -73,11 +73,11 @@ Simply visit the website [url goes here]
 7/18/18 To do list
 * ~~format hike modules on Search~~
 * implement search filters
-* get smaller banner images
+* ~~get smaller banner images~~
 * browse hikes link (add filters)
 * at least design a login page
-* hiking guide pictures
-* dynamic routing
+* guide pictures
+* hike detail modal
 * media queries
 
 ### <a name="credit"></a> Credits and licenses
