@@ -21,14 +21,17 @@ export default (state = {}, action) =>{
         features: features
       }
     })
-    return newState
-
-  case c.RECEIVE_HIKE:
-    newState = Object.assign({}, state)
-    newState[action.hike.id] = action.hike
-    return newState
-
+    return newState;
   default:
-    return state
+    return state;
   }
-}
+};
+  //
+  // case c.RECEIVE_HIKE:
+  //   newState = Object.assign({}, state)
+  //   newState[action.hike.id] = action.hike
+  //   return newState
+  //
+  // default:
+  //   return state
+  // }

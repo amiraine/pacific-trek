@@ -10,7 +10,8 @@ function SearchResults(props){
         var hike = props.hikeList.masterHikeList[hikeId]
         console.log();
         return <Hike
-          handleUrlId = {props.handleUrlId}
+          handleOpenModal = {props.handleOpenModal}
+          handleCloseModal = {props.handleCloseModal}
           name = {hike.name}
           img = {hike.img}
           start = {hike.start}

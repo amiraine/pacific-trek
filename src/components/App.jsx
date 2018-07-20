@@ -23,7 +23,8 @@ class App extends React.Component {
     this.state  = {
       searchTerm: '',
       urlId: '',
-      showModal: false
+      showModal: false,
+      selectedHikeId: null
     }
     //code if trying to use dynamic routes
     this.handleUrlId = this.handleUrlId.bind(this);
@@ -44,9 +45,10 @@ class App extends React.Component {
     });
   }
   //functions for prompting modals
-  handleOpenModal(){
+  handleOpenModal(hikeId){
     this.setState({
-      showModal: true
+      showModal: true,
+      selectedHikeId: hikeId
     });
   }
   handleCloseModal(){
@@ -108,7 +110,9 @@ class App extends React.Component {
             <Search hikeList={this.props.masterHikeList}
             handleUrlId={this.handleUrlId}
             handleOpenModal = {this.handleOpenModal}
-            handleCloseModal = {this.handleCloseModal}/>
+            handleCloseModal = {this.handleCloseModal}
+            showModal = {this.state.showModal}
+            selectedHikeId = {this.state.selectedHikeId}/>
           }/>
           <Route
             path="/login"

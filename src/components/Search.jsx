@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SearchResults from './SearchResults';
+import HikeDetailModal from './HikeDetailModal';
 
 function Search(props){
+  let optionalSelectedHike = null;
+  if (props.selectedHikeId !=null){
+    optionalSelectedHike = <HikeDetailModal selectedHikeId={props.hikeList.masterhikeList.${props.selectedHikeId}}/>
+  }
   return(
     <div className='search-wrapper'>
             <style>{`
@@ -15,6 +20,10 @@ function Search(props){
                 overflow-y: auto;
               }
             `}</style>
+          <HikeDetailModal show={this.state.showModal}
+            hikeList={props.hikeList}
+            handleCloseModal={props.handleCloseModal}
+            />
             <div className='search-results'>
               <SearchResults hikeList={props.hikeList}
               handleUrlId={props.handleUrlId}/>
@@ -59,7 +68,8 @@ function Search(props){
 // }
 
 Search.propTypes = {
-  handleUrlId: PropTypes.func
+  handleUrlId: PropTypes.func,
+
 }
 
 export default Search;
