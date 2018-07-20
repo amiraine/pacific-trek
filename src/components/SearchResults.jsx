@@ -31,6 +31,8 @@ function SearchResults(props){
 }
 SearchResults.propTypes = {
   hikeList: PropTypes.object,
-  handleUrlId: PropTypes.func
+  handleUrlId: PropTypes.func,
+  handleOpenModal: PropTypes.func,
+  handleCloseModal: PropTypes.func
 }
 export default SearchResults;

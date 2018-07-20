@@ -22,11 +22,17 @@ class App extends React.Component {
     super(props)
     this.state  = {
       searchTerm: '',
-      urlId: ''
+      urlId: '',
+      showModal: false
     }
+    //code if trying to use dynamic routes
     this.handleUrlId = this.handleUrlId.bind(this);
     this.handleResetUrlId = this.handleUrlId.bind(this);
+    //code if trying to just open a modal on top of the page
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
+  //functions for dynamic routing
   handleUrlId(id){
     this.setState({
       urlId: id
@@ -36,6 +42,17 @@ class App extends React.Component {
     this.setState({
       urlId: ''
     });
+  }
+  //functions for prompting modals
+  handleOpenModal(){
+    this.setState({
+      showModal: true
+    });
+  }
+  handleCloseModal(){
+    this.setState({
+      showModal: false
+    })
   }
   componentWillMount(){
     const { dispatch } = this.props
@@ -89,7 +106,9 @@ class App extends React.Component {
             path="/search"
             render= {(props)=>
             <Search hikeList={this.props.masterHikeList}
-            handleUrlId={this.handleUrlId}/>
+            handleUrlId={this.handleUrlId}
+            handleOpenModal = {this.handleOpenModal}
+            handleCloseModal = {this.handleCloseModal}/>
           }/>
           <Route
             path="/login"
