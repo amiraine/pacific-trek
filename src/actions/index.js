@@ -19,7 +19,7 @@ export function addHike(_name, _img, _start, _end, _hikeType, _length, _gain, _d
     family: _family,
     crowded: _crowded,
     features: _features
-  })
+  });
 }
 
 function receiveHike(hikeFromFirebase){
@@ -33,13 +33,10 @@ export function watchFirebaseHikesRef(){
   return function(dispatch){
     hikes.on('child_added', data =>{
       const newHike = Object.assign(
-        {},
-        data.val(),
-        {
-          id : data.getKey(),
-        }
-      );
-      dispatch(receiveHike(newHike))
+        {}, data.val(), { id: data.getKey(),
+      });
+      // console.log(newHike);
+      dispatch(receiveHike(newHike));
     });
-  }
+  };
 }

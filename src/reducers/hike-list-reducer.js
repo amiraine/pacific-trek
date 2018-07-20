@@ -9,7 +9,7 @@ export default (state = {}, action) =>{
   switch (action.type){
     case types.RECEIVE_HIKE:
       newState = Object.assign({}, state);
-      newState[action.hike.id] = action.ticket;
+      newState[action.hike.id] = action.hike;
       return newState;
     case types.ADD_HIKE:
       newState = Object.assign({}, state, {
