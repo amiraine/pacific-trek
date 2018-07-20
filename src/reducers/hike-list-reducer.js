@@ -3,14 +3,14 @@ const { types } = constants;
 
 export default (state = {}, action) =>{
   let newState;
-  const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features, id } = action;
+  const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features} = action;
 
   switch (action.type){
     case types.RECEIVE_HIKE:
       newState = Object.assign({}, state);
       newState[action.hike.id] = action.hike;
       return newState;
-      
+
     case types.ADD_HIKE:
       newState = Object.assign({}, state, {
         [id]: {
@@ -26,7 +26,6 @@ export default (state = {}, action) =>{
           family: family,
           crowded: crowded,
           features: features,
-          id: id
         }
       });
       return newState;

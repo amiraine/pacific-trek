@@ -16,8 +16,7 @@ describe('hikeListReducer', ()=>{
     season: [spring],
     family: 'true',
     crowded: 'true',
-    features: [waterfall],
-    id: 'longstringfromfirebase'
+    features: [waterfall]
   };
 
   test('should return default state if no action type is recognized', () => {
@@ -25,7 +24,7 @@ describe('hikeListReducer', ()=>{
   });
 
   test('should add new hike date to masterHikeList', () =>{
-    const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features, id } = sampleHikeData;
+    const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features } = sampleHikeData;
     action = {
       type: c.ADD_HIKE,
       name: name,
@@ -39,8 +38,7 @@ describe('hikeListReducer', ()=>{
       season: season,
       family: family,
       crowded: crowded,
-      features: features,
-      id: id
+      features: features
     };
     expect(hikeListReducer({}, action)).toEqual({
       [id] : {
@@ -55,8 +53,7 @@ describe('hikeListReducer', ()=>{
         season: season,
         family: family,
         crowded: crowded,
-        features: features,
-        id: id
+        features: features
       }
     });
   });
