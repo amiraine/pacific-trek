@@ -4,7 +4,7 @@ import SearchResults from './SearchResults';
 
 function Search(props){
   return(
-    <div className='search-wrapper'>
+    <div className='search-wrapper transition-wrapper'>
             <style>{`
               .search-wrapper{
                 display: grid;

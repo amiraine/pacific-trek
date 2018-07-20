@@ -91,7 +91,10 @@ class App extends React.Component {
               font-size: 4em;
               font-family: 'Alegreya Sans SC', sans-serif;
               text-shadow: 2px 2px 5px black;
-              animation: 1s fadein ease-out 0s 1;
+              animation: 1.5s fadein ease-in 0s 1;
+            }
+            .transition-wrapper{
+              animation: 1s fadein ease-in 0s 1;
             }
             @keyframes fadein {
               0%{
