@@ -13,19 +13,21 @@ describe('hikeListReducer', ()=>{
     length: 3.5,
     gain: 200,
     difficulty: 'Easy',
+    season: 'spring',
     family: 'true',
     crowded: 'true',
     features: 'waterfall',
     id: 'longstringfromfirebase'
-  }
+  };
 
   test('should return default state if no action type is recognized', () => {
     expect(hikeListReducer({}, {type: null})).toEqual({});
   });
+
   test('should add new hike date to masterHikeList', () =>{
-    const { name, img, start, end, type, length, gain, diffculty, family, crowded, features, id } = sampleHikeData;
+    const { name, img, start, end, type, length, gain, difficulty, season, family, crowded, features, id } = sampleHikeData;
     action = {
-      type: 'ADD_HIKE',
+      type: c.ADD_HIKE,
       name: name,
       img: img,
       start: start,
@@ -34,6 +36,7 @@ describe('hikeListReducer', ()=>{
       length: length,
       gain: gain,
       difficulty: difficulty,
+      season: season,
       family: family,
       crowded: crowded,
       features: features,
@@ -49,6 +52,7 @@ describe('hikeListReducer', ()=>{
         length: length,
         gain: gain,
         difficulty: difficulty,
+        season: season,
         family: family,
         crowded: crowded,
         features: features,
@@ -56,4 +60,5 @@ describe('hikeListReducer', ()=>{
       }
     });
   });
+
 });

@@ -1,9 +1,7 @@
-import constants from './../constants'
-
 export default (state = {}, action) =>{
   switch (action.type){
   case 'ADD_HIKE':
-    const { name, img, start, end, type, length, gain, difficulty, season, family, crowded, features } = action
+    const { name, img, start, end, type, length, gain, difficulty, season, family, crowded, features } = action;
     let newState = Object.assign({}, state, {
       [id]: {
         name: name,
@@ -20,18 +18,9 @@ export default (state = {}, action) =>{
         features: features,
         id: id
       }
-    })
+    });
     return newState;
   default:
     return state;
   }
 };
-  //
-  // case c.RECEIVE_HIKE:
-  //   newState = Object.assign({}, state)
-  //   newState[action.hike.id] = action.hike
-  //   return newState
-  //
-  // default:
-  //   return state
-  // }
