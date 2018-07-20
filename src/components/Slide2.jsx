@@ -7,7 +7,7 @@ function Slide2(){
       <style jsx>{`
         .slide{
           width: 100%;
-          background-image: url('https://images.pexels.com/photos/840719/pexels-photo-840719.jpeg');
+          background-image: url('http://kcbariatric.com/wp-content/uploads/2018/03/hiking.jpg');
           max-height: 1500px;
           min-height: 50vh;
           background-position: bottom;

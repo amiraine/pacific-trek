@@ -6,7 +6,7 @@ function Slide3(){
       <style jsx>{`
         .slide{
           width: 100%;
-          background-image: url('https://images.pexels.com/photos/172510/pexels-photo-172510.jpeg');
+          background-image: url('http://www.woodswanderer.com/wp-content/uploads/2015/06/lush-forest2.jpg');
           max-height: 1500px;
           min-height: 50vh;
           background-position: bottom;
