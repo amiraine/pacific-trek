@@ -26,7 +26,7 @@ function Search(props){
   );
 }
 Search.propTypes = {
-  hikeList: PropTypes.obj
+  hikeList: PropTypes.object
 }
 
 

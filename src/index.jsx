@@ -8,7 +8,7 @@ import rootReducer from './reducers/index'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware))
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 // let unsubscribe = store.subscribe(() =>
 //   console.log(store.getState())
 // );

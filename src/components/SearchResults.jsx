@@ -3,7 +3,7 @@ import Hike from './Hike'
 import PropTypes from 'prop-types'
 
 function SearchResults(props){
-
+  
   return(
     <div>
       {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){

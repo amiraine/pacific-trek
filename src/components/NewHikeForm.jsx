@@ -11,7 +11,7 @@ function NewHikeForm(props){
   let _img = null
   let _start = null
   let _end = null
-  let _type = null
+  let _hikeType = null
   let _length = null
   let _gain = null
   let _difficulty = null
@@ -24,13 +24,13 @@ function NewHikeForm(props){
   function handleNewHikeSubmission(event){
     const { dispatch } = props
     event.preventDefault()
-    dispatch(addHike(_name.value, _img.value, _start.value, _end.value, _type.value, parseFloat(_length.value), parseInt(_gain.value), _difficulty.value, _season.value.split(', '), _family.value, _crowded.value, _features.value.split(', ')))
+    dispatch(addHike(_name.value, _img.value, _start.value, _end.value, _hikeType.value, parseFloat(_length.value), parseInt(_gain.value), _difficulty.value, _season.value.split(', '), _family.value, _crowded.value, _features.value.split(', ')))
 
     _name.value = ''
     _img.value = ''
     _start.value = ''
     _end.value = ''
-    _type.value = ''
+    _hikeType.value = ''
     _length.value = ''
     _gain.value = ''
     _difficulty.value = ''
@@ -73,7 +73,7 @@ function NewHikeForm(props){
           id='end'
           placeholder='End point'
           ref={(input) => {_end = input}}/><br/>
-        <select required id='type' ref={(input) => {_type = input}}>
+        <select required id='type' ref={(input) => {_hikeType = input}}>
           <option disabled>hike type</option>
           <option value='Out-and-back'>Out-and-back</option>
           <option value='Loop'>Loop</option>

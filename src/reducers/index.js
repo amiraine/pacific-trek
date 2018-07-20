@@ -7,4 +7,4 @@ const rootReducer = combineReducers({
   selectedHike: selectedHikeReducer
 });
 
-export default rootReducer
+export default rootReducer;

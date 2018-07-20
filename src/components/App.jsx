@@ -22,8 +22,8 @@ class App extends React.Component {
     const { dispatch } = this.props;
     const { watchFirebaseHikesRef } = actions;
     dispatch(watchFirebaseHikesRef());
+    console.log(this.hikeList.masterHikeList);
   }
-
   render(){
     return(
       <div>

@@ -1,6 +1,5 @@
 import hikeListReducer from './../../src/reducers/hike-list-reducer';
-import constants from './../../src/constants';
-const { c } = constants;
+import c from './../../src/constants';
 
 describe('hikeListReducer', ()=>{
   let action;
@@ -9,7 +8,7 @@ describe('hikeListReducer', ()=>{
     img: 'imagestring',
     start: 'somewhere in the gorge',
     end: 'somewhere in the gorge',
-    type: 'loop',
+    hikeType: 'loop',
     length: 3.5,
     gain: 200,
     difficulty: 'Easy',
@@ -25,14 +24,14 @@ describe('hikeListReducer', ()=>{
   });
 
   test('should add new hike date to masterHikeList', () =>{
-    const { name, img, start, end, type, length, gain, difficulty, season, family, crowded, features, id } = sampleHikeData;
+    const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features, id } = sampleHikeData;
     action = {
       type: c.ADD_HIKE,
       name: name,
       img: img,
       start: start,
       end: end,
-      type: type,
+      hikeType: hikeType,
       length: length,
       gain: gain,
       difficulty: difficulty,
@@ -48,7 +47,7 @@ describe('hikeListReducer', ()=>{
         img: img,
         start: start,
         end: end,
-        type: type,
+        hikeType: hikeType,
         length: length,
         gain: gain,
         difficulty: difficulty,
