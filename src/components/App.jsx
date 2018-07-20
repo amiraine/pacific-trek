@@ -76,6 +76,34 @@ class App extends React.Component {
             .wrapper{
               background-color: #d8ffbf;
             }
+            .slide{
+              width: 100vw;
+              max-height: 1500px;
+              min-height: 50vh;
+              background-position: bottom;
+              background-attachment: fixed;
+              background-size: cover;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+              text-align: center;
+              font-size: 4em;
+              font-family: 'Alegreya Sans SC', sans-serif;
+              text-shadow: 2px 2px 5px black;
+              animation: 1.5s fadein ease-in 0s 1;
+            }
+            .transition-wrapper{
+              animation: 1s fadein ease-in 0s 1;
+            }
+            @keyframes fadein {
+              0%{
+                opacity: 0;
+              }
+              100%{
+                opacity: 100;
+              }
+            }
             `}</style>
         <Navigation/>
         <Switch>

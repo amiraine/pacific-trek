@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Browse(){
   return(
-    <div className='wrapper browse-wrapper'>
+    <div className='wrapper browse-wrapper transition-wrapper'>
       <style jsx>{`
         .browse-wrapper{
           display: flex;

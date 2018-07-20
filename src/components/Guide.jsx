@@ -2,7 +2,7 @@ import React from 'react'
 
 function Guide(){
   return(
-    <div>
+    <div className='transition-wrapper'>
       <style jsx>{`
         h1{
           font-family: 'Alegreya Sans SC', sans-serif;

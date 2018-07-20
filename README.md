@@ -21,7 +21,7 @@ The focus is to create a guide that's easy to use with a clean interface that al
 |MVP|Reach Goals|
 |--|--|
 | - Hike objects are displayed on the search page | - User login (via Google accounts)|
-| - Hike detail pages with dynamic routing | - Google maps for trailheads |
+| - Hike detail modals | - Google maps for trailheads |
 | - Hike objects are filterable by checkbox/text input criteria | - Comment/rating system for each hike |
 | --- | - Administrative ability from site (edit database without directly editing through Firebase)|
 | --- | Allow users to add hikes to a 'wishlist' |
@@ -77,7 +77,7 @@ Simply visit the website [url goes here]
 * browse hikes link (add filters)
 * at least design a login page
 * hiking guide pictures
-* dynamic routing
+* detail modals
 * media queries
 
 ### <a name="credit"></a> Credits and licenses

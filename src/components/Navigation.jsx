@@ -4,7 +4,7 @@ import trees from '../../src/assets/images/logo.svg'
 
 function Navigation(){
   return(
-    <div className='nav-wrapper'>
+    <div className='nav-wrapper transition-wrapper'>
       <style jsx>{`
         img {
           max-width: 500px;
