@@ -1,7 +1,8 @@
-export default (state = {}, action =>{
+export default (state = {}, action) =>{
   switch (action.type){
     case 'SELECT_HIKE':
-    return action.hikeId
+      return action.hikeId;
+    default:
+      return state;
   }
-  return state;
-});
+};

@@ -1,9 +1,8 @@
 import constants from './../constants'
-const { c } = constants
 
 export default (state = {}, action) =>{
   switch (action.type){
-  case c.ADD_HIKE:
+  case 'ADD_HIKE':
     const { name, img, start, end, type, length, gain, difficulty, season, family, crowded, features } = action
     let newState = Object.assign({}, state, {
       [id]: {
@@ -18,7 +17,8 @@ export default (state = {}, action) =>{
         season: season,
         family: family,
         crowded: crowded,
-        features: features
+        features: features,
+        id: id
       }
     })
     return newState;

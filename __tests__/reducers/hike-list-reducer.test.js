@@ -23,7 +23,7 @@ describe('hikeListReducer', ()=>{
     expect(hikeListReducer({}, {type: null})).toEqual({});
   });
   test('should add new hike date to masterHikeList', () =>{
-    const { name, image, start, end, type, length, gain, diffculty, family, crowded, features, id } = sampleHikeData;
+    const { name, img, start, end, type, length, gain, diffculty, family, crowded, features, id } = sampleHikeData;
     action = {
       type: 'ADD_HIKE',
       name: name,
