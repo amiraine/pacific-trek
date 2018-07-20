@@ -6,7 +6,7 @@ function Slide1(){
       <style jsx>{`
         .slide{
           width: 100%;
-          background-image: url('https://images.pexels.com/photos/213825/pexels-photo-213825.jpeg');
+          background-image: url('https://traveloregon.com/wp-content/uploads/2015/06/CraterLake.jpg');
           max-height: 1500px;
           min-height: 50vh;
           background-position: center bottom;
