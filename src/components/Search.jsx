@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SearchResults from './SearchResults';
 import HikeDetailModal from './HikeDetailModal';
+import {connect} from 'react-redux';
 
 function Search(props){
-  let optionalSelectedHike = null;
-  if (props.selectedHikeId !=null){
-    optionalSelectedHike = <HikeDetailModal selectedHikeId={props.hikeList.masterhikeList.${props.selectedHikeId}}/>
-  }
+  // let optionalSelectedHike = null;
+  // if (props.selectedHikeId !=null){
+  //   optionalSelectedHike = <HikeDetailModal selectedHikeId={props.hikeList.masterhikeList.${props.selectedHikeId}}/>
+  // }
   return(
     <div className='search-wrapper'>
             <style>{`
@@ -20,7 +21,7 @@ function Search(props){
                 overflow-y: auto;
               }
             `}</style>
-          <HikeDetailModal show={this.state.showModal}
+          <HikeDetailModal show={props.showModal}
             hikeList={props.hikeList}
             handleCloseModal={props.handleCloseModal}
             />
@@ -69,7 +70,11 @@ function Search(props){
 
 Search.propTypes = {
   handleUrlId: PropTypes.func,
-
 }
+const mapStateToProps = state => {
+  return {
+    selectedHikeId: state.selectedHikeId
+  };
+};
 
-export default Search;
+export default connect(mapStateToProps)(Search);

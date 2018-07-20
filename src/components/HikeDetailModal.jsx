@@ -9,7 +9,7 @@ function HikeDetailModal(props){
       <style jsx>{`
         .hike-modal{
           z-index: 2;
-          
+
         }
       `}</style>
 
@@ -17,9 +17,9 @@ function HikeDetailModal(props){
   );
 }
 
-HikeDetailModal.propTypes = {
-  handleCloseModal: PropTypes.func,
-  hikeList: PropTypes.object
-}
+// HikeDetailModal.propTypes = {
+//   handleCloseModal: PropTypes.func,
+//   hikeList: PropTypes.object
+// }
 
 export default HikeDetailModal;

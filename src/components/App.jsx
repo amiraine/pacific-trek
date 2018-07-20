@@ -57,8 +57,8 @@ class App extends React.Component {
     })
   }
   componentWillMount(){
-    const { dispatch } = this.props
-    const { watchFirebaseHikesRef } = actions
+    const { dispatch } = this.props;
+    const { watchFirebaseHikesRef } = actions;
     dispatch(watchFirebaseHikesRef())
   }
 
@@ -111,7 +111,6 @@ class App extends React.Component {
             handleUrlId={this.handleUrlId}
             handleOpenModal = {this.handleOpenModal}
             handleCloseModal = {this.handleCloseModal}
-            showModal = {this.state.showModal}
             selectedHikeId = {this.state.selectedHikeId}/>
           }/>
           <Route
@@ -147,8 +146,9 @@ App.propTypes ={
 
 const mapStateToProps = state => {
   return {
-    masterHikeList: state
-  }
-}
+    selectedHikeId: state.selectedHikeId,
+    masterHikeList: state.masterHikeList
+  };
+};
 
 export default withRouter(connect(mapStateToProps)(App))
