@@ -8,40 +8,22 @@ import Search from './Search';
 import Profile from './Profile';
 import NewHikeForm from './NewHikeForm';
 import Guide from './Guide';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import constants from './../constants';
-const { c } = constants;
-import * as actions from './../actions';
 import Footer from './Footer';
 import Error404 from './Error404';
 import HikeDetail from './HikeDetail';
+import firebase from 'firebase';
 
 class App extends React.Component {
   constructor(props){
     super(props)
     this.state  = {
-      searchTerm: '',
-      urlId: ''
+
     }
-    this.handleUrlId = this.handleUrlId.bind(this);
-    this.handleResetUrlId = this.handleUrlId.bind(this);
+
   }
-  handleUrlId(id){
-    this.setState({
-      urlId: id
-    });
-  }
-  handleResetUrlId(){
-    this.setState({
-      urlId: ''
-    });
-  }
-  componentWillMount(){
-    const { dispatch } = this.props
-    const { watchFirebaseHikesRef } = actions
-    dispatch(watchFirebaseHikesRef())
-  }
+
 
   render(){
     return(
@@ -116,8 +98,7 @@ class App extends React.Component {
           <Route
             path="/search"
             render= {(props)=>
-            <Search hikeList={this.props.masterHikeList}
-            handleUrlId={this.handleUrlId}/>
+            <Search/>
           }/>
           <Route
             path="/login"
@@ -132,27 +113,11 @@ class App extends React.Component {
             path="/guide"
             component={Guide}/>
           <Route
-            path="/hike/:id"
-            render={(props)=>
-            <HikeDetail hikeList={this.props.masterHikeList}
-            resetUrlId={this.handleResetUrlId}/>
-          }/>
-          <Route
             component={Error404}/>
         </Switch>
         <Footer/>
       </div>
     )
-  }
-}
-
-App.propTypes ={
-  masterHikeList: PropTypes.object
-}
-
-const mapStateToProps = state => {
-  return {
-    masterHikeList: state
   }
 }
 
