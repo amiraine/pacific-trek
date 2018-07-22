@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import constants from './../constants';
 const {firebaseConfig, types} = constants;
 import firebase from 'firebase';
+=======
+import constants from './../constants'
+const { firebaseConfig, c } = constants
+import firebase from 'firebase'
+>>>>>>> 986f7f58f7696b222b31d772a6be4e25f985f4ac
 
 firebase.initializeApp(firebaseConfig);
 const hikes = firebase.database().ref('hikes');
