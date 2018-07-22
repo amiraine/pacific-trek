@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import constants from './../constants';
-const {firebaseConfig, types} = constants;
-import firebase from 'firebase';
-=======
 import constants from './../constants'
 const { firebaseConfig, c } = constants
 import firebase from 'firebase'
->>>>>>> 986f7f58f7696b222b31d772a6be4e25f985f4ac
 
 firebase.initializeApp(firebaseConfig);
 const hikes = firebase.database().ref('hikes');
@@ -30,7 +24,7 @@ export function addHike(_name, _img, _start, _end, _hikeType, _length, _gain, _d
 
 function receiveHike(hikeFromFirebase){
   return{
-    type: types.RECEIVE_HIKE,
+    type: c.RECEIVE_HIKE,
     hike: hikeFromFirebase
   };
 }

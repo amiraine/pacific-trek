@@ -1,7 +1,4 @@
 import React from 'react'
-import family from '../../src/assets/images/family-icon.png';
-import points from '../../src/assets/images/points.png';
-
 import { Link } from 'react-router-dom'
 
 function Browse(){

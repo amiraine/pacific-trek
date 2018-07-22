@@ -56,7 +56,6 @@ function Hike(props){
 Hike.propTypes = {
   name: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
-  id: PropTypes.string,
   start: PropTypes.string.isRequired,
   end: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
