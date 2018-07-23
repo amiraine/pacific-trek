@@ -3,6 +3,14 @@ import Hike from './Hike';
 import PropTypes from 'prop-types';
 import SearchFilters from './SearchFilters';
 function Search(props){
+  // function searchingFor(term){
+  //   return function(x){
+  //     return x.name.toLowerCase().includes(term.toLowerCase()) || !term;
+  //   }
+  // }
+  const listOfHikes = props.hikeList.masterHikeList;
+  const hikeListArray = Object.values(props.hikeList.masterHikeList);
+
   return(
     <div className='search-wrapper transition-wrapper'>
       <style>{`
@@ -14,15 +22,14 @@ function Search(props){
         .search-results{
           overflow-y: auto;
         }
-        ::webkit-scrollbar {
+        .search-results::webkit-scrollbar {
           width: 0;
-          background: transparent;
         }
       `}</style>
       <div className='search-results'>
         <SearchFilters/>
-        {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
-          var hike = props.hikeList.masterHikeList[hikeId]
+        {Object.keys(listOfHikes).map(function(hikeId){
+          var hike = listOfHikes[hikeId];
           return <Hike
             name = {hike.name}
             img = {hike.img}
@@ -48,5 +55,7 @@ function Search(props){
 }
 Search.propTypes = {
   hikeList: PropTypes.object,
+  // searchText: PropTypes.string,
+  // searchHandler: PropTypes.func
 }
 export default Search

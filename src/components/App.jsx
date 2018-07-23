@@ -16,13 +16,23 @@ import firebase from 'firebase';
 import * as actions from './../actions';
 
 class App extends React.Component {
-
+  constructor(props){
+    super(props);
+    this.state = {
+      searchText: '',
+      hikeListArray: Object.values(this.props.masterHikeList)
+    };
+    this.searchHandler = this.searchHandler.bind(this);
+  }
   componentWillMount(){
     const { dispatch } = this.props
     const { watchFirebaseHikesRef } = actions
     dispatch(watchFirebaseHikesRef());
   }
-
+  searchHandler(event){
+    this.setState({searchText: event.target.value})
+    console.log(this.state.searchText);
+  }
   render(){
     return(
       <div>
@@ -95,7 +105,9 @@ class App extends React.Component {
             component={Browse}/>
           <Route
             path="/search"
-            render= {()=><Search hikeList={this.props.masterHikeList}/>}/>
+            render= {()=><Search hikeList={this.props.masterHikeList}
+            searchText = {this.state.searchText}
+            searchHandler = {this.searchHandler}/>}/>
           <Route
             path="/login"
             component={Login}/>
@@ -115,12 +127,13 @@ class App extends React.Component {
 };
 
 App.propTypes = {
-  masterHikeList: PropTypes.object
+  masterHikeList: PropTypes.object,
+  updateSearch: PropTypes.func
 };
 
 const mapStateToProps = state => {
   return {
-    masterHikeList: state
+    masterHikeList: state,
   };
 };
 
