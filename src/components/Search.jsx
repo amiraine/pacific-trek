@@ -1,7 +1,7 @@
-import React from 'react'
-import Hike from './Hike'
-import PropTypes from 'prop-types'
-
+import React from 'react';
+import Hike from './Hike';
+import PropTypes from 'prop-types';
+import SearchFilters from './SearchFilters';
 function Search(props){
   return(
     <div className='search-wrapper transition-wrapper'>
@@ -14,8 +14,13 @@ function Search(props){
         .search-results{
           overflow-y: auto;
         }
+        ::webkit-scrollbar {
+          width: 0;
+          background: transparent;
+        }
       `}</style>
       <div className='search-results'>
+        <SearchFilters/>
         {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
           var hike = props.hikeList.masterHikeList[hikeId]
           return <Hike

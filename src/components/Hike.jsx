@@ -5,15 +5,6 @@ import constants from './../constants'
 const { c } = constants
 
 function Hike(props){
-  function handleSavingHike(hikeId){
-    const { dispatch } = props;
-    const action = {
-      type: c.SELECT_HIKE,
-      hikeId: hikeId
-    };
-    dispatch(action);
-  }
-
   return(
     <div className='hike-module'>
       <style jsx>{`
