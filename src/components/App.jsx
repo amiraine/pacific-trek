@@ -17,11 +17,11 @@ import * as actions from './../actions';
 
 class App extends React.Component {
 
-  componentWillMount() {
-     const { dispatch } = this.props;
-     const { watchFirebaseHikesRef } = actions;
-     dispatch(watchFirebaseHikesRef());
-   }
+  componentWillMount(){
+    const { dispatch } = this.props
+    const { watchFirebaseHikesRef } = actions
+    dispatch(watchFirebaseHikesRef());
+  }
 
   render(){
     return(
@@ -95,9 +95,7 @@ class App extends React.Component {
             component={Browse}/>
           <Route
             path="/search"
-            render= {()=>
-            <Search hikeList = {this.props.masterHikeList}/>
-          }/>
+            render= {()=><Search hikeList={this.props.masterHikeList}/>}/>
           <Route
             path="/login"
             component={Login}/>
@@ -122,7 +120,7 @@ App.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterHikeList: state.masterHikeList
+    masterHikeList: state
   };
 };
 

@@ -1,11 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import SearchResults from './SearchResults';
-import {connect} from 'react-redux';
+import React from 'react'
+import Hike from './Hike'
+import PropTypes from 'prop-types'
 
 function Search(props){
   return(
-    <div className='search-wrapper'>
+    <div className='search-wrapper transition-wrapper'>
       <style>{`
         .search-wrapper{
           display: grid;
@@ -40,11 +39,9 @@ function Search(props){
         map goes here
       </div>
     </div>
-  );
+  )
 }
 Search.propTypes = {
-  hikeList: PropTypes.object
+  hikeList: PropTypes.object,
 }
-
-
-export default Search;
+export default Search
