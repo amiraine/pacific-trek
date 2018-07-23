@@ -1,6 +1,6 @@
-import constants from './../constants'
-const { firebaseConfig, c } = constants
-import firebase from 'firebase'
+import constants from './../constants';
+const { firebaseConfig, c } = constants;
+import firebase from 'firebase';
 
 firebase.initializeApp(firebaseConfig);
 const hikes = firebase.database().ref('hikes');

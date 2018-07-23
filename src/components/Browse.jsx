@@ -20,12 +20,10 @@ function Browse(){
           margin: 25px;
         }
       `}</style>
-      <div className='browse-icon-group'>
-        <img src={family}/>
+    <div className='browse-icon-group'>
         <h1>Family-friendly</h1>
       </div>
       <div className='browse-icon-group'>
-        <img src={points}/>
         <h1>Viewpoints</h1>
       </div>
     </div>

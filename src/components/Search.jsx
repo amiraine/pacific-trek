@@ -17,7 +17,24 @@ function Search(props){
         }
       `}</style>
       <div className='search-results'>
-        <SearchResults hikeList={props.hikeList}/>
+        {Object.keys(props.hikeList.masterHikeList).map(function(hikeId){
+          var hike = props.hikeList.masterHikeList[hikeId]
+          return <Hike
+            name = {hike.name}
+            img = {hike.img}
+            start = {hike.start}
+            end = {hike.end}
+            type = {hike.type}
+            length = {hike.length}
+            gain = {hike.gain}
+            difficulty = {hike.difficulty}
+            season = {hike.season}
+            family = {hike.family}
+            crowded = {hike.crowded}
+            features = {hike.features}
+            key = {hikeId}
+            hikeId = {hikeId}/>
+        })}
       </div>
       <div className='map'>
         map goes here

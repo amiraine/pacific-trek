@@ -1,9 +1,9 @@
 import constants from './../constants';
-const { types } = constants;
+const { c } = constants;
 
 export default (state = {}, action) =>{
   switch (action.type){
-    case types.SELECT_HIKE:
+    case c.SELECT_HIKE:
       return action.hikeId;
     default:
       return state;
