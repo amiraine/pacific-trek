@@ -43,6 +43,9 @@ class App extends React.Component {
               padding: 0;
               box-sizing: border-box;
             }
+            *:focus{
+              outline: none;
+            }
             body{
               position: relative;
               min-height: 100vh;
