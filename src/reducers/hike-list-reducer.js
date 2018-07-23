@@ -3,7 +3,7 @@ const { c } = constants;
 
 export default (state = {}, action) =>{
   let newState;
-  const { name, img, start, end, hikeType, length, gain, difficulty, season, family, crowded, features } = action;
+  const { name, img, start, end, type, length, gain, difficulty, season, family, crowded, features } = action;
 
   switch (action.type){
     case c.RECEIVE_HIKE:
@@ -18,7 +18,7 @@ export default (state = {}, action) =>{
           img: img,
           start: start,
           end: end,
-          hikeType: hikeType,
+          type: type,
           length: length,
           gain: gain,
           difficulty: difficulty,

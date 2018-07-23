@@ -16,13 +16,7 @@ import firebase from 'firebase';
 import * as actions from './../actions';
 
 class App extends React.Component {
-  constructor(props){
-    super(props)
-    this.state  = {
 
-    }
-
-  }
   componentWillMount() {
      const { dispatch } = this.props;
      const { watchFirebaseHikesRef } = actions;
