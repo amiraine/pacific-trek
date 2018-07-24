@@ -14,7 +14,7 @@ import NewHikeForm from './NewHikeForm';
 import Guide from './Guide';
 import Footer from './Footer';
 import Error404 from './Error404';
-// redux imports 
+// redux imports
 import constants from './../constants';
 import * as actions from './../actions';
 
@@ -22,15 +22,15 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      hikeListArray: Object.values(this.props.masterHikeList),
       searchText: '',
       searchLength: null,
       searchDifficulty: null,
       selectedHike: null
     };
-    this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleLengthChange = this.handleLengthChange.bind(this);
-    this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
+    console.log(this.state);
+    // this.handleTextChange = this.handleTextChange.bind(this);
+    // this.handleLengthChange = this.handleLengthChange.bind(this);
+    // this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
     this.handleSelectedHike = this.handleSelectedHike.bind(this);
   }
   //functions
@@ -39,26 +39,26 @@ class App extends React.Component {
     const { watchFirebaseHikesRef } = actions
     dispatch(watchFirebaseHikesRef());
   }
-  handleTextChange(event){
-    this.setState({
-      searchText: event.target.value
-    });
-  }
-  handleLengthChange(event){
-    this.setState({
-      searchLength: event.target.value
-    });
-  }
-  handleDifficultyChange(event){
-    this.setState({
-      searchDifficulty: event.target.value
-    });
-  }
   handleSelectedHike(hikeId){
     this.setState({
       selectedHike: hikeId
     });
   }
+  // handleTextChange(event){
+  //   this.setState({
+  //     searchText: event.target.value
+  //   });
+  // }
+  // handleLengthChange(event){
+  //   this.setState({
+  //     searchLength: event.target.value
+  //   });
+  // }
+  // handleDifficultyChange(event){
+  //   this.setState({
+  //     searchDifficulty: event.target.value
+  //   });
+  // }
   //render
   render(){
     return(
@@ -124,6 +124,15 @@ class App extends React.Component {
                 opacity: 100;
               }
             }
+            .hike-detail{
+              height: 236px;
+              background-color:#85db53;
+              font-family: 'Helvetica Neue', sans-serif;
+            }
+            .hike-detail h2{
+              text-align:center;
+              font-family: 'Alegreya Sans SC', sans-serif;
+            }
             `}</style>
         <Navigation/>
         <Switch>
@@ -137,14 +146,6 @@ class App extends React.Component {
             path="/search"
             render= {(props)=><Search
               hikeList = {this.props.masterHikeList}
-              searchText = {this.state.searchText}
-              searchLength = {this.state.searchLength}
-              searchDifficulty = {this.state.searchDifficulty}
-              selectedHike = {this.state.selectedHike}
-              handleSelectedHike = {this.handleSelectedHike}
-              handleTextChange = {this.handleTextChange}
-              handleLengthChange = {this.handleLengthChange}
-              handleDifficultyChange = {this.handleDifficultyChange}
               onHikeSelection = {this.handleSelectedHike}
               selectedHike = {this.state.selectedHike}
             />}/>

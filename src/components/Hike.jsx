@@ -27,6 +27,9 @@ function Hike(props){
         width: 10vw;
         height: 10vw;
       }
+      .hike-module:hover{
+        background-color:#baefff;
+      }
     `}</style>
     <div className="image">
       <img src={props.img}/>
@@ -38,14 +41,13 @@ function Hike(props){
       Difficulty: {props.difficulty}<br/>
       {props.length} miles<br/>
       {props.gain} ft. elevation gain
-      {props.$key}
     </div>
   </div>
   return(
-  <div onClick={() => {props.onHikeSelection(props.hikeId)}}>
-    {hikeInfo}
-  </div>
-  )
+    <div onClick={() => {props.onHikeSelection(props.hikeId)}}>
+      {hikeInfo}
+    </div>
+  );
 }
 
 Hike.propTypes = {

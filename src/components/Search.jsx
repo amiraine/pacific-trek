@@ -8,10 +8,6 @@ function Search(props){
 
   const listOfHikes = props.hikeList.masterHikeList;
 
-  let currentHike = null;
-  if(props.selectedHike != null ){
-    <HikeDetail selectedHike = {props.selectedHike}/>
-  }
 
   return(
     <div className='search-wrapper transition-wrapper'>
@@ -53,8 +49,11 @@ function Search(props){
       </div>
       <div className='map'>
         <div className='selected-hike'>
-          {currentHike}
+          <HikeDetail
+          selectedHike = {props.selectedHike}
+          hikeList = {props.hikeList.masterHikeList}/>
         </div>
+
       </div>
     </div>
   )
