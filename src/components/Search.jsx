@@ -20,12 +20,22 @@ function Search(props){
         .search-results{
           overflow-y: auto;
         }
-        .search-results::webkit-scrollbar {
-          width: 0;
+        .search-results::-webkit-scrollbar {
+          width: 2px;
+        }
+        .map{
+          background-image: url('https://i.imgur.com/HaQsbuu.png');
+          background-size: 100%;
+          background-position: center right;
+          max-height: 900px;
+          min-height: 56vh;
         }
       `}</style>
       <div className='search-results'>
-        <SearchFilters/>
+        <SearchFilters
+          onSearchDifficulty = {props.handleDifficultyChange}
+          searchDifficulty = {props.searchDifficulty}
+          />
         {Object.keys(listOfHikes).map(function(hikeId){
           var hike = listOfHikes[hikeId];
           return <Hike
@@ -47,13 +57,14 @@ function Search(props){
             />
         })}
       </div>
-      <div className='map'>
+      <div>
         <div className='selected-hike'>
           <HikeDetail
           selectedHike = {props.selectedHike}
           hikeList = {props.hikeList.masterHikeList}/>
         </div>
-
+        <div className='map'>
+        </div>
       </div>
     </div>
   )

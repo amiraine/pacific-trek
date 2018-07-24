@@ -23,14 +23,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchText: '',
-      searchLength: null,
-      searchDifficulty: null,
+      searchLength: 0,
+      searchDifficulty: '',
       selectedHike: null
     };
-    console.log(this.state);
     // this.handleTextChange = this.handleTextChange.bind(this);
     // this.handleLengthChange = this.handleLengthChange.bind(this);
-    // this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
+    this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
     this.handleSelectedHike = this.handleSelectedHike.bind(this);
   }
   //functions
@@ -38,6 +37,10 @@ class App extends React.Component {
     const { dispatch } = this.props
     const { watchFirebaseHikesRef } = actions
     dispatch(watchFirebaseHikesRef());
+  }
+  handleConsoleLog(event){
+    event.preventDefault();
+    alert(this.state.searchDifficulty);
   }
   handleSelectedHike(hikeId){
     this.setState({
@@ -54,11 +57,11 @@ class App extends React.Component {
   //     searchLength: event.target.value
   //   });
   // }
-  // handleDifficultyChange(event){
-  //   this.setState({
-  //     searchDifficulty: event.target.value
-  //   });
-  // }
+  handleDifficultyChange(event){
+    this.setState({
+      searchDifficulty: event.target.value
+    });
+  }
   //render
   render(){
     return(
@@ -148,6 +151,9 @@ class App extends React.Component {
               hikeList = {this.props.masterHikeList}
               onHikeSelection = {this.handleSelectedHike}
               selectedHike = {this.state.selectedHike}
+              onSearchDifficulty = {this.handleDifficultyChange}
+              searchDifficulty = {this.state.searchDifficulty}
+              onConsoleLog = {this.handleConsoleLog}
             />}/>
           <Route
             path="/login"

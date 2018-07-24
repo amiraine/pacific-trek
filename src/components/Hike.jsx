@@ -12,7 +12,7 @@ function Hike(props){
         display: grid;
         grid-template-columns: 10vw 1fr;
         margin-bottom: 10px;
-        background-color: #8ce6ff;
+        background-color: #D6FD83;
         color: #002e3a;
         font-family: 'Helvetica Neue', sans-serif;
       }
@@ -28,7 +28,7 @@ function Hike(props){
         height: 10vw;
       }
       .hike-module:hover{
-        background-color:#baefff;
+        background-color: #f4ffdd;
       }
     `}</style>
     <div className="image">
