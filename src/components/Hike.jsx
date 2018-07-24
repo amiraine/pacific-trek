@@ -5,45 +5,49 @@ import constants from './../constants'
 const { c } = constants
 
 function Hike(props){
-  return(
-    <div className='hike-module'>
-      <style jsx>{`
-        .hike-module{
-          height: 10vw;
-          display: grid;
-          grid-template-columns: 10vw 1fr;
-          margin-bottom: 10px;
-          background-color: #8ce6ff;
-          color: #002e3a;
-          font-family: 'Helvetica Neue', sans-serif;
-        }
-        .hike-name{
-          margin-bottom: 10px;
-        }
-        .hike-info{
-          padding:10px;
-        }
-        img{
-          object-fit: cover;
-          width: 10vw;
-          height: 10vw;
-        }
-      `}</style>
-      <div className="image">
-        <img src={props.img}/>
-      </div>
-      <div className='hike-info'>
-        <div className='hike-name'>
-          <strong>{props.name}</strong><br/>
-        </div>
-        Difficulty: {props.difficulty}<br/>
-        {props.length} miles<br/>
-        {props.gain} ft. elevation gain
-        {props.$key}
-      </div>
+  const hikeInfo = <div className='hike-module'>
+    <style jsx>{`
+      .hike-module{
+        height: 10vw;
+        display: grid;
+        grid-template-columns: 10vw 1fr;
+        margin-bottom: 10px;
+        background-color: #8ce6ff;
+        color: #002e3a;
+        font-family: 'Helvetica Neue', sans-serif;
+      }
+      .hike-name{
+        margin-bottom: 10px;
+      }
+      .hike-info{
+        padding:10px;
+      }
+      img{
+        object-fit: cover;
+        width: 10vw;
+        height: 10vw;
+      }
+    `}</style>
+    <div className="image">
+      <img src={props.img}/>
     </div>
+    <div className='hike-info'>
+      <div className='hike-name'>
+        <strong>{props.name}</strong><br/>
+      </div>
+      Difficulty: {props.difficulty}<br/>
+      {props.length} miles<br/>
+      {props.gain} ft. elevation gain
+      {props.$key}
+    </div>
+  </div>
+  return(
+  <div onClick={() => {props.onHikeSelection(props.hikeId)}}>
+    {hikeInfo}
+  </div>
   )
 }
+
 Hike.propTypes = {
   name: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
@@ -56,6 +60,8 @@ Hike.propTypes = {
   season: PropTypes.array.isRequired,
   family: PropTypes.string.isRequired,
   crowded: PropTypes.string.isRequired,
-  features: PropTypes.array.isRequired
+  features: PropTypes.array.isRequired,
+  onHikeSelection: PropTypes.func,
+  selectedHike: PropTypes.object
 }
 export default connect()(Hike);

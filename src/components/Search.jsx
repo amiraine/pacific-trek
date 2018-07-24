@@ -2,9 +2,16 @@ import React from 'react';
 import Hike from './Hike';
 import PropTypes from 'prop-types';
 import SearchFilters from './SearchFilters';
+import HikeDetail from './HikeDetail';
+
 function Search(props){
 
   const listOfHikes = props.hikeList.masterHikeList;
+
+  let currentHike = null;
+  if(props.selectedHike != null ){
+    <HikeDetail selectedHike = {props.selectedHike}/>
+  }
 
   return(
     <div className='search-wrapper transition-wrapper'>
@@ -22,15 +29,11 @@ function Search(props){
         }
       `}</style>
       <div className='search-results'>
-        <SearchFilters
-          searchText = {props.searchText}
-          searchLength = {props.searchLength}
-          searchDifficulty = {props.searchDifficulty}
-          
-          />
+        <SearchFilters/>
         {Object.keys(listOfHikes).map(function(hikeId){
           var hike = listOfHikes[hikeId];
           return <Hike
+            onHikeSelection = {props.onHikeSelection}
             name = {hike.name}
             img = {hike.img}
             start = {hike.start}
@@ -44,12 +47,13 @@ function Search(props){
             crowded = {hike.crowded}
             features = {hike.features}
             key = {hikeId}
-            hikeId = {hikeId}/>
+            hikeId = {hikeId}
+            />
         })}
       </div>
       <div className='map'>
         <div className='selected-hike'>
-
+          {currentHike}
         </div>
       </div>
     </div>
@@ -62,6 +66,7 @@ Search.propTypes = {
   searchDifficulty: PropTypes.string,
   handleTextChange: PropTypes.func,
   handleLengthChange: PropTypes.func,
-  handleDifficultyChange: PropTypes.func
+  handleDifficultyChange: PropTypes.func,
+  onHikeSelection: PropTypes.func
 }
 export default Search

@@ -49,6 +49,7 @@ function SearchFilters(){
           font-family: 'Alegreya Sans SC', sans-serif;
           color: white;
           background-color: #238a3a;
+          padding: 8px;
         }
       `}</style>
     <div className='search-filter-wrapper'>

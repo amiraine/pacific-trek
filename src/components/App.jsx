@@ -1,6 +1,10 @@
+// library imports
 import React from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import firebase from 'firebase';
+// component imports
 import Navigation from './Navigation';
 import Browse from './Browse';
 import Home from './Home';
@@ -8,11 +12,10 @@ import Login from './Login';
 import Search from './Search';
 import NewHikeForm from './NewHikeForm';
 import Guide from './Guide';
-import PropTypes from 'prop-types';
-import constants from './../constants';
 import Footer from './Footer';
 import Error404 from './Error404';
-import firebase from 'firebase';
+// redux imports 
+import constants from './../constants';
 import * as actions from './../actions';
 
 class App extends React.Component {
@@ -30,6 +33,7 @@ class App extends React.Component {
     this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
     this.handleSelectedHike = this.handleSelectedHike.bind(this);
   }
+  //functions
   componentWillMount(){
     const { dispatch } = this.props
     const { watchFirebaseHikesRef } = actions
@@ -54,8 +58,8 @@ class App extends React.Component {
     this.setState({
       selectedHike: hikeId
     });
-    console.log(this.state.selectedhike);
   }
+  //render
   render(){
     return(
       <div>
@@ -131,13 +135,18 @@ class App extends React.Component {
             component={Browse}/>
           <Route
             path="/search"
-            render= {()=><Search hikeList={this.props.masterHikeList}
-            searchText = {this.state.searchText}
-            searchLength = {this.state.searchLength}
-            searchDifficulty = {this.state.searchDifficulty}
-            handleTextChange = {this.handleTextChange}
-            handleLengthChange = {this.handleLengthChange}
-            handleDifficultyChange = {this.handleDifficultyChange}
+            render= {(props)=><Search
+              hikeList = {this.props.masterHikeList}
+              searchText = {this.state.searchText}
+              searchLength = {this.state.searchLength}
+              searchDifficulty = {this.state.searchDifficulty}
+              selectedHike = {this.state.selectedHike}
+              handleSelectedHike = {this.handleSelectedHike}
+              handleTextChange = {this.handleTextChange}
+              handleLengthChange = {this.handleLengthChange}
+              handleDifficultyChange = {this.handleDifficultyChange}
+              onHikeSelection = {this.handleSelectedHike}
+              selectedHike = {this.state.selectedHike}
             />}/>
           <Route
             path="/login"
