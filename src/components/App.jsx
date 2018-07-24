@@ -38,14 +38,16 @@ class App extends React.Component {
     const { watchFirebaseHikesRef } = actions
     dispatch(watchFirebaseHikesRef());
   }
-  handleConsoleLog(event){
-    event.preventDefault();
-    alert(this.state.searchDifficulty);
-  }
   handleSelectedHike(hikeId){
     this.setState({
       selectedHike: hikeId
     });
+  }
+  handleDifficultyChange(event){
+    this.setState({
+      searchDifficulty: event.target.value
+    });
+    console.log(this.state.searchDifficulty);
   }
   // handleTextChange(event){
   //   this.setState({
@@ -57,11 +59,6 @@ class App extends React.Component {
   //     searchLength: event.target.value
   //   });
   // }
-  handleDifficultyChange(event){
-    this.setState({
-      searchDifficulty: event.target.value
-    });
-  }
   //render
   render(){
     return(

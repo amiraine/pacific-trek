@@ -69,7 +69,6 @@ function SearchFilters(props){
                 <option value='Hard'>Hard</option>
               </select>
             </label>
-            <p>{props.searchDifficulty}</p>
           </div>
           <div className='select-column'>
             <label for='length'>Hike length</label><br/>
