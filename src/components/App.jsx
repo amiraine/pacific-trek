@@ -19,19 +19,42 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      hikeListArray: Object.values(this.props.masterHikeList),
       searchText: '',
-      hikeListArray: Object.values(this.props.masterHikeList)
+      searchLength: null,
+      searchDifficulty: null,
+      selectedHike: null
     };
-    this.searchHandler = this.searchHandler.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleLengthChange = this.handleLengthChange.bind(this);
+    this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
+    this.handleSelectedHike = this.handleSelectedHike.bind(this);
   }
   componentWillMount(){
     const { dispatch } = this.props
     const { watchFirebaseHikesRef } = actions
     dispatch(watchFirebaseHikesRef());
   }
-  searchHandler(event){
-    this.setState({searchText: event.target.value})
-    console.log(this.state.searchText);
+  handleTextChange(event){
+    this.setState({
+      searchText: event.target.value
+    });
+  }
+  handleLengthChange(event){
+    this.setState({
+      searchLength: event.target.value
+    });
+  }
+  handleDifficultyChange(event){
+    this.setState({
+      searchDifficulty: event.target.value
+    });
+  }
+  handleSelectedHike(hikeId){
+    this.setState({
+      selectedHike: hikeId
+    });
+    console.log(this.state.selectedhike);
   }
   render(){
     return(
@@ -110,7 +133,12 @@ class App extends React.Component {
             path="/search"
             render= {()=><Search hikeList={this.props.masterHikeList}
             searchText = {this.state.searchText}
-            searchHandler = {this.searchHandler}/>}/>
+            searchLength = {this.state.searchLength}
+            searchDifficulty = {this.state.searchDifficulty}
+            handleTextChange = {this.handleTextChange}
+            handleLengthChange = {this.handleLengthChange}
+            handleDifficultyChange = {this.handleDifficultyChange}
+            />}/>
           <Route
             path="/login"
             component={Login}/>
@@ -131,7 +159,6 @@ class App extends React.Component {
 
 App.propTypes = {
   masterHikeList: PropTypes.object,
-  updateSearch: PropTypes.func
 };
 
 const mapStateToProps = state => {

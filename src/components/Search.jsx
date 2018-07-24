@@ -3,13 +3,8 @@ import Hike from './Hike';
 import PropTypes from 'prop-types';
 import SearchFilters from './SearchFilters';
 function Search(props){
-  // function searchingFor(term){
-  //   return function(x){
-  //     return x.name.toLowerCase().includes(term.toLowerCase()) || !term;
-  //   }
-  // }
+
   const listOfHikes = props.hikeList.masterHikeList;
-  const hikeListArray = Object.values(props.hikeList.masterHikeList);
 
   return(
     <div className='search-wrapper transition-wrapper'>
@@ -27,7 +22,12 @@ function Search(props){
         }
       `}</style>
       <div className='search-results'>
-        <SearchFilters/>
+        <SearchFilters
+          searchText = {props.searchText}
+          searchLength = {props.searchLength}
+          searchDifficulty = {props.searchDifficulty}
+          
+          />
         {Object.keys(listOfHikes).map(function(hikeId){
           var hike = listOfHikes[hikeId];
           return <Hike
@@ -48,14 +48,20 @@ function Search(props){
         })}
       </div>
       <div className='map'>
-        map goes here
+        <div className='selected-hike'>
+
+        </div>
       </div>
     </div>
   )
 }
 Search.propTypes = {
   hikeList: PropTypes.object,
-  // searchText: PropTypes.string,
-  // searchHandler: PropTypes.func
+  searchText: PropTypes.string,
+  searchLength: PropTypes.number,
+  searchDifficulty: PropTypes.string,
+  handleTextChange: PropTypes.func,
+  handleLengthChange: PropTypes.func,
+  handleDifficultyChange: PropTypes.func
 }
 export default Search
