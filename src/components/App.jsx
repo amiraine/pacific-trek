@@ -46,25 +46,21 @@ class App extends React.Component {
     });
   }
   handleTextChange(event){
-    console.log(this.state.searchText);
     this.setState({
       searchText: event.target.value
     });
   }
   handleDifficultyChange(event){
-    console.log(this.state.searchDifficulty);
     this.setState({
       searchDifficulty: event.target.value
     });
   }
   handleLengthChange(event){
-    console.log(this.state.searchLength);
     this.setState({
       searchLength: event.target.value
     });
   }
   handleTypeChange(event){
-    console.log(this.state.searchType);
     this.setState({
       searchType: event.target.value
     })
@@ -136,7 +132,7 @@ class App extends React.Component {
             }
             .hike-detail{
               height: 236px;
-              background-color:#85db53;
+              background-color:#d8ffbf;
               font-family: 'Helvetica Neue', sans-serif;
             }
             .hike-detail h2{

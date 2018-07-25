@@ -28,18 +28,31 @@ function HikeDetail(props){
             height: 236px;
             width: 236px;
           }
-          .text-details{
+          .detail-module{
             padding: 20px;
+          }
+          .text-details{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
           }
         `}</style>
         <div>
           <img src={props.hikeList[props.selectedHike].img}/>
         </div>
-        <div className = 'text-details'>
+        <div className = 'detail-module'>
           <h2>{props.hikeList[props.selectedHike].name}</h2>
-          <p>Starting point: {props.hikeList[props.selectedHike].start}</p>
-          <p>Ending point: {props.hikeList[props.selectedHike].end}</p>
-          <p>Trail type: {props.hikeList[props.selectedHike].type}</p>
+          <div className='text-details'>
+            <h4>Starting point: {props.hikeList[props.selectedHike].start}</h4>
+            <h4>Ending point: {props.hikeList[props.selectedHike].end}</h4>
+            <h4>Difficulty: {props.hikeList[props.selectedHike].difficulty}</h4>
+            <h4>Trail type: {props.hikeList[props.selectedHike].type}</h4>
+            <h4>Length: {props.hikeList[props.selectedHike].length} miles</h4>
+            <h4>Elevation gain{props.hikeList[props.selectedHike].gain} feet</h4>
+            <h4>Best seasons: {props.hikeList[props.selectedHike].season.join(', ')}</h4>
+            <h4>Family-friendly: {props.hikeList[props.selectedHike].family}</h4>
+            <h4>Crowded: {props.hikeList[props.selectedHike].crowded}</h4>
+          </div>
+          <h4>Notable features: {props.hikeList[props.selectedHike].features.join(', ')}</h4>
         </div>
       </div>
     );

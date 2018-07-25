@@ -87,19 +87,19 @@ function SearchFilters(props){
             <label>Length</label><br/>
             <select
               ref={(input) =>{_leng = input;}}
-              onChange = {props.onLengthChange}>
+              onChange = {props.onLengthChange}
+              value = {props.searchLength}>
               <option value=''>Select a length</option>
-              <option value='less2'>Less than 2 miles</option>
-              <option value='2-5'>2-5 miles</option>
-              <option value='5-7'>5-7 miles</option>
-              <option value='7+'>More than 7 miles</option>
+              <option value='less4'>Less than 4 miles</option>
+              <option value='4+'>More than 4 miles</option>
             </select>
           </div>
           <div className='select-wrapper'>
             <label>Hike type</label>
             <select
               ref={(input) => {_type = input;}}
-              onChange = {props.onTypeChange}>
+              onChange = {props.onTypeChange}
+              value={props.searchType}>
               <option value = ''>Select hike type</option>
               <option value = 'Out-and-Back'>Out-and-Back</option>
               <option value = 'Loop'>Loop</option>
