@@ -33,8 +33,13 @@ function Search(props){
       `}</style>
       <div className='search-results'>
         <SearchFilters
-          onSearchDifficulty = {props.handleDifficultyChange}
+          onSearchDifficulty = {props.onDifficultyChange}
           searchDifficulty = {props.searchDifficulty}
+          onDifficultyChange = {props.onDifficultyChange}
+          searchLength = {props.searchLength}
+          onLengthChange = {props.onLengthChange}
+          searchText = {props.searchText}
+          onTextChange = {props.onLengthChange}
           />
         {Object.keys(listOfHikes).map(function(hikeId){
           var hike = listOfHikes[hikeId];

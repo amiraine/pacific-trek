@@ -27,8 +27,8 @@ class App extends React.Component {
       searchDifficulty: '',
       selectedHike: null
     };
-    // this.handleTextChange = this.handleTextChange.bind(this);
-    // this.handleLengthChange = this.handleLengthChange.bind(this);
+    this.handleTextChange = this.handleTextChange.bind(this);
+    this.handleLengthChange = this.handleLengthChange.bind(this);
     this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
     this.handleSelectedHike = this.handleSelectedHike.bind(this);
   }
@@ -43,22 +43,24 @@ class App extends React.Component {
       selectedHike: hikeId
     });
   }
+  handleTextChange(event){
+    console.log(this.state.searchText);
+    this.setState({
+      searchText: event.target.value
+    });
+  }
   handleDifficultyChange(event){
+    console.log(this.state.searchDifficulty);
     this.setState({
       searchDifficulty: event.target.value
     });
-    console.log(this.state.searchDifficulty);
   }
-  // handleTextChange(event){
-  //   this.setState({
-  //     searchText: event.target.value
-  //   });
-  // }
-  // handleLengthChange(event){
-  //   this.setState({
-  //     searchLength: event.target.value
-  //   });
-  // }
+  handleLengthChange(event){
+    console.log(this.state.searchLength);
+    this.setState({
+      searchLength: event.target.value
+    });
+  }
   //render
   render(){
     return(
@@ -149,9 +151,12 @@ class App extends React.Component {
               hikeList = {this.props.masterHikeList}
               onHikeSelection = {this.handleSelectedHike}
               selectedHike = {this.state.selectedHike}
-              onSearchDifficulty = {this.handleDifficultyChange}
               searchDifficulty = {this.state.searchDifficulty}
-              onConsoleLog = {this.handleConsoleLog}
+              searchText = {this.state.searchText}
+              searchLength = {this.state.searchLength}
+              onDifficultyChange = {this.handleDifficultyChange}
+              onTextChange = {this.handleTextChange}
+              onLengthChange = {this.handleLengthChange}
             />}/>
           <Route
             path="/login"
