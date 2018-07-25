@@ -95,7 +95,7 @@ function SearchFilters(props){
             </select>
           </div>
           <div className='select-wrapper'>
-            <label>Hike type</label>
+            <label>Hike type</label><br/>
             <select
               ref={(input) => {_type = input;}}
               onChange = {props.onTypeChange}

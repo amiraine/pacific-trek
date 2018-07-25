@@ -42,10 +42,28 @@ function NewHikeForm(props){
 
   return(
     <div className='form-container'>
-      <style>{`
+      <style jsx>{`
         .form-container{
           text-align:center;
-          padding-top:200px;
+          margin: 200px auto;
+          padding:50px;
+          background-color: #d8ffbf;
+          width: 400px;
+          border-radius: 5px;
+        }
+        input, select{
+          width: 250px;
+          padding:3px;
+          border: 0;
+          margin: 5px;
+        }
+        button{
+          padding: 15px 45px;
+          background-color:#3cadff;
+          color: white;
+          margin: 20px;
+          border: 0;
+          border-radius: 5px;
         }
       `}</style>
       <form onSubmit={handleNewHikeSubmission}>

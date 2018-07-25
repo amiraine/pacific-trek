@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function HikeDetail(props){
+  const INLINE = {
+    textAlign: 'center'
+  }
   if(props.selectedHike === null){
     return(
       <div className='hike-detail none-selected'>
@@ -47,12 +50,12 @@ function HikeDetail(props){
             <h4>Difficulty: {props.hikeList[props.selectedHike].difficulty}</h4>
             <h4>Trail type: {props.hikeList[props.selectedHike].type}</h4>
             <h4>Length: {props.hikeList[props.selectedHike].length} miles</h4>
-            <h4>Elevation gain{props.hikeList[props.selectedHike].gain} feet</h4>
+            <h4>Elevation gain: {props.hikeList[props.selectedHike].gain} feet</h4>
             <h4>Best seasons: {props.hikeList[props.selectedHike].season.join(', ')}</h4>
             <h4>Family-friendly: {props.hikeList[props.selectedHike].family}</h4>
             <h4>Crowded: {props.hikeList[props.selectedHike].crowded}</h4>
           </div>
-          <h4>Notable features: {props.hikeList[props.selectedHike].features.join(', ')}</h4>
+          <h4 style={INLINE}>Notable features: {props.hikeList[props.selectedHike].features.join(', ')}</h4>
         </div>
       </div>
     );
