@@ -62,13 +62,16 @@ function SearchFilters(props){
         <div className='select-grid'>
           <div className='select-column'>
             <label for='difficulty'>Difficulty
-              <select value={props.searchDifficulty} onChange={props.onSearchDifficulty}>
+              <select
+                value = {props.searchDifficulty}
+                onChange={props.onSearchDifficulty}>
                 <option>Difficulty level</option>
                 <option value='Easy'>Easy</option>
                 <option value='Moderate'>Moderate</option>
                 <option value='Hard'>Hard</option>
               </select>
             </label>
+            <p>{props.searchDifficulty}</p>
           </div>
           <div className='select-column'>
             <label for='length'>Hike length</label><br/>

@@ -132,6 +132,7 @@ class App extends React.Component {
             .hike-detail h2{
               text-align:center;
               font-family: 'Alegreya Sans SC', sans-serif;
+              padding: 20px 0px;
             }
             `}</style>
         <Navigation/>
