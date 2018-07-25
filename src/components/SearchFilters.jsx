@@ -70,25 +70,34 @@ function SearchFilters(props){
             onChange = {props.onTextChange}
             />
         </div>
-        <div className='select-grids'>
+        <div className='select-grid'>
           <div className='select-wrapper'>
             <label>Difficulty</label><br/>
             <select
               ref={(input)=>{_diff = input;}}
               onChange = {props.onDifficultyChange}
+              value ={props.searchDifficulty}
               >
-              <option value = '' selected>Select a difficulty</option>
+              <option disabled>Select a difficulty</option>
               <option value = 'Easy'>Easy</option>
               <option value = 'Moderate'>Moderate</option>
               <option value = 'Difficult'>Difficult</option>
             </select>
           </div>
           <div className='select-wrapper'>
-            <select>
-
+            <label>Length</label><br/>
+            <select
+              ref={(input) =>{_leng = input;}}
+              onChange = {props.onLengthChange}>
+              <option value=''>Select a length</option>
+              <option value='less2'>Less than 2 miles</option>
+              <option value='2-5'>2-5 miles</option>
+              <option value='5-7'>5-7 miles</option>
+              <option value='7+'>More than 7 miles</option>
             </select>
           </div>
           <div className='select-wrapper'>
+
           </div>
         </div>
       </form>

@@ -23,7 +23,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchText: '',
-      searchLength: 0,
+      searchLength: '',
       searchDifficulty: '',
       selectedHike: null
     };
