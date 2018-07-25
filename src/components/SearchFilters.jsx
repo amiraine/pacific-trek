@@ -6,9 +6,8 @@ function SearchFilters(props){
   let _text = null;
   let _diff = null;
   let _leng = null;
-  function handleSearchSubmission(event){
-    event.preventDefault();
-  }
+  let _type = null;
+
   return(
     <div>
       <style jsx>{`
@@ -78,7 +77,7 @@ function SearchFilters(props){
               onChange = {props.onDifficultyChange}
               value ={props.searchDifficulty}
               >
-              <option disabled>Select a difficulty</option>
+              <option value =''>Select a difficulty</option>
               <option value = 'Easy'>Easy</option>
               <option value = 'Moderate'>Moderate</option>
               <option value = 'Difficult'>Difficult</option>
@@ -97,7 +96,15 @@ function SearchFilters(props){
             </select>
           </div>
           <div className='select-wrapper'>
-
+            <label>Hike type</label>
+            <select
+              ref={(input) => {_type = input;}}
+              onChange = {props.onTypeChange}>
+              <option value = ''>Select hike type</option>
+              <option value = 'Out-and-Back'>Out-and-Back</option>
+              <option value = 'Loop'>Loop</option>
+              <option value = 'Lollipop'>Lollipop</option>
+            </select>
           </div>
         </div>
       </form>
@@ -109,8 +116,13 @@ function SearchFilters(props){
   )
 }
 SearchFilters.propTypes = {
-  onSearchDifficulty: PropTypes.func,
+  onDifficultyChange: PropTypes.func,
   searchDifficulty: PropTypes.string,
-  onConsoleLog: PropTypes.func
+  onTypeChange: PropTypes.func,
+  searchType: PropTypes.string,
+  onLengthChange: PropTypes.func,
+  searchLength: PropTypes.string,
+  onTextChange: PropTypes.func,
+  searchText: PropTypes.string
 }
 export default SearchFilters;

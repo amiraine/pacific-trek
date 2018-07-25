@@ -25,12 +25,14 @@ class App extends React.Component {
       searchText: '',
       searchLength: '',
       searchDifficulty: '',
+      searchType: '',
       selectedHike: null
     };
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleLengthChange = this.handleLengthChange.bind(this);
     this.handleDifficultyChange = this.handleDifficultyChange.bind(this);
     this.handleSelectedHike = this.handleSelectedHike.bind(this);
+    this.handleTypeChange = this.handleTypeChange.bind(this);
   }
   //functions
   componentWillMount(){
@@ -60,6 +62,12 @@ class App extends React.Component {
     this.setState({
       searchLength: event.target.value
     });
+  }
+  handleTypeChange(event){
+    console.log(this.state.searchType);
+    this.setState({
+      searchType: event.target.value
+    })
   }
   //render
   render(){
@@ -157,6 +165,8 @@ class App extends React.Component {
               onDifficultyChange = {this.handleDifficultyChange}
               onTextChange = {this.handleTextChange}
               onLengthChange = {this.handleLengthChange}
+              searchType = {this.state.searchType}
+              onTypeChange = {this.handleTypeChange}
             />}/>
           <Route
             path="/login"
