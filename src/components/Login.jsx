@@ -10,7 +10,7 @@ function Login(){
           justify-content: center;
           align-items: center;
         }
-        h2{
+        h2 {
           font-family: sans-serif;
 
         }

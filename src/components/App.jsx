@@ -101,6 +101,8 @@ class App extends React.Component {
             }
             .wrapper{
               background-color: #d8ffbf;
+              min-height: 70vh;
+              padding: 75px;
             }
             .slide{
               width: 100vw;

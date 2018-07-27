@@ -7,7 +7,7 @@ import trail from '../../src/assets/images/trail.png';
 
 function Guide(){
   return(
-    <div className='transition-wrapper'>
+    <div className='transition-wrapper wrapper'>
       <style jsx>{`
         h1{
           font-family: 'Alegreya Sans SC', sans-serif;
@@ -24,8 +24,6 @@ function Guide(){
           color: white;
         }
         .guide{
-          min-height: 70vh;
-          padding: 50px;
           margin: 0 auto 25px auto;
           font-family: 'Helvetica Neue', sans-serif;
           display: flex;

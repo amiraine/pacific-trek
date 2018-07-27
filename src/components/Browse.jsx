@@ -13,13 +13,12 @@ function Browse(){
       <style jsx>{`
         .browse-wrapper{
           display: flex;
-          height: 70vh;
-          padding: 75px;
           font-family: 'Alegreya Sans SC', sans-serif;
           flex-wrap: wrap;
+          align-items: center;
         }
         .browse-icon-group img{
-          max-height: 215px;
+          max-height: 200px;
         }
         .browse-icon-group{
           text-align: center;
