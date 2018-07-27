@@ -5,45 +5,49 @@ import SearchFilters from './SearchFilters';
 import HikeDetail from './HikeDetail';
 
 function Search(props){
+//declaring constants for less redundant code
   const listOfHikes = props.hikeList.masterHikeList;
   let hikeSelectionModule = <HikeDetail
     selectedHike = {props.selectedHike}
     hikeList = {props.hikeList.masterHikeList}/>
+  const searchFilterModule = <SearchFilters
+    onSearchDifficulty = {props.onDifficultyChange}
+    searchDifficulty = {props.searchDifficulty}
+    onDifficultyChange = {props.onDifficultyChange}
+    searchLength = {props.searchLength}
+    onLengthChange = {props.onLengthChange}
+    searchText = {props.searchText}
+    onTextChange = {props.onLengthChange}
+    searchType = {props.searchType}
+    onTypeChange = {props.onTypeChange}
+    />
+  const searchStyles = <style jsx>{`
+      .search-wrapper{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        height: 75vh;
+      }
+      .search-results{
+        overflow-y: auto;
+      }
+      .search-results::-webkit-scrollbar {
+        width: 2px;
+      }
+      .map{
+        background-image: url('https://i.imgur.com/HaQsbuu.png');
+        background-size: 100%;
+        background-position: center right;
+        max-height: 900px;
+        min-height: 56vh;
+      }
+    `}</style>
+
   if(props.searchText ==='' && props.searchLength === '' && props.searchDifficulty === ''){
     return (
       <div className='search-wrapper transition-wrapper'>
-        <style jsx>{`
-            .search-wrapper{
-              display: grid;
-              grid-template-columns: 1fr 2fr;
-              height: 75vh;
-            }
-            .search-results{
-              overflow-y: auto;
-            }
-            .search-results::-webkit-scrollbar {
-              width: 2px;
-            }
-            .map{
-              background-image: url('https://i.imgur.com/HaQsbuu.png');
-              background-size: 100%;
-              background-position: center right;
-              max-height: 900px;
-              min-height: 56vh;
-            }
-          `}</style>
+        {searchStyles}
           <div className='search-results'>
-            <SearchFilters
-              onSearchDifficulty = {props.onDifficultyChange}
-              searchDifficulty = {props.searchDifficulty}
-              onDifficultyChange = {props.onDifficultyChange}
-              searchLength = {props.searchLength}
-              onLengthChange = {props.onLengthChange}
-              searchText = {props.searchText}
-              onTextChange = {props.onLengthChange}
-              searchType = {props.searchType}
-              onTypeChange = {props.onTypeChange}
-              />
+            {searchFilterModule}
             {Object.keys(listOfHikes).map(function(hikeId){
               var hike = listOfHikes[hikeId];
               return <Hike
@@ -77,36 +81,9 @@ function Search(props){
   } else if(props.searchDifficulty!=''){
     return(
       <div className='search-wrapper transition-wrapper'>
-        <style jsx>{`
-            .search-wrapper{
-              display: grid;
-              grid-template-columns: 1fr 2fr;
-              height: 75vh;
-            }
-            .search-results{
-              overflow-y: auto;
-            }
-            .search-results::-webkit-scrollbar {
-              width: 2px;
-            }
-            .map{
-              background-image: url('https://i.imgur.com/HaQsbuu.png');
-              background-size: 100%;
-              background-position: center right;
-              max-height: 900px;
-              min-height: 56vh;
-            }
-          `}</style>
+        {searchStyles}
           <div className='search-results'>
-            <SearchFilters
-              onSearchDifficulty = {props.onDifficultyChange}
-              searchDifficulty = {props.searchDifficulty}
-              onDifficultyChange = {props.onDifficultyChange}
-              searchLength = {props.searchLength}
-              onLengthChange = {props.onLengthChange}
-              searchText = {props.searchText}
-              onTextChange = {props.onLengthChange}
-              />
+            {searchFilterModule}
             {Object.keys(listOfHikes).filter(hikeId=> listOfHikes[hikeId].difficulty === props.searchDifficulty).map(function(hikeId){
               var hike = listOfHikes[hikeId];
               return <Hike
@@ -140,36 +117,9 @@ function Search(props){
   } else if(props.searchLength === 'less4'){
     return (
       <div className='search-wrapper transition-wrapper'>
-      <style jsx>{`
-          .search-wrapper{
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            height: 75vh;
-          }
-          .search-results{
-            overflow-y: auto;
-          }
-          .search-results::-webkit-scrollbar {
-            width: 2px;
-          }
-          .map{
-            background-image: url('https://i.imgur.com/HaQsbuu.png');
-            background-size: 100%;
-            background-position: center right;
-            max-height: 900px;
-            min-height: 56vh;
-          }
-        `}</style>
+        {searchStyles}
         <div className='search-results'>
-          <SearchFilters
-            onSearchDifficulty = {props.onDifficultyChange}
-            searchDifficulty = {props.searchDifficulty}
-            onDifficultyChange = {props.onDifficultyChange}
-            searchLength = {props.searchLength}
-            onLengthChange = {props.onLengthChange}
-            searchText = {props.searchText}
-            onTextChange = {props.onLengthChange}
-            />
+          {searchFilterModule}
           {Object.keys(listOfHikes).filter(hikeId=> listOfHikes[hikeId].length < 4).map(function(hikeId){
             var hike = listOfHikes[hikeId];
             return <Hike
@@ -203,36 +153,9 @@ function Search(props){
   } else if(props.searchLength === '4+'){
     return(
       <div className='search-wrapper transition-wrapper'>
-        <style jsx>{`
-            .search-wrapper{
-              display: grid;
-              grid-template-columns: 1fr 2fr;
-              height: 75vh;
-            }
-            .search-results{
-              overflow-y: auto;
-            }
-            .search-results::-webkit-scrollbar {
-              width: 2px;
-            }
-            .map{
-              background-image: url('https://i.imgur.com/HaQsbuu.png');
-              background-size: 100%;
-              background-position: center right;
-              max-height: 900px;
-              min-height: 56vh;
-            }
-          `}</style>
+        {searchStyles}
         <div className='search-results'>
-          <SearchFilters
-            onSearchDifficulty = {props.onDifficultyChange}
-            searchDifficulty = {props.searchDifficulty}
-            onDifficultyChange = {props.onDifficultyChange}
-            searchLength = {props.searchLength}
-            onLengthChange = {props.onLengthChange}
-            searchText = {props.searchText}
-            onTextChange = {props.onLengthChange}
-            />
+          {searchFilterModule}
           {Object.keys(listOfHikes).filter(hikeId=> listOfHikes[hikeId].length > 4).map(function(hikeId){
             var hike = listOfHikes[hikeId];
             return <Hike
