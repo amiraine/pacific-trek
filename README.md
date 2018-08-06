@@ -43,11 +43,6 @@ The focus is to create a guide that's easy to use with a clean interface that al
 * HTML/CSS
 * React
 * Firebase
-
-### <a name="setup"></a>Installation and setup instructions
-#### For users:
-Simply visit the website [url goes here]
-
 #### For developers:
 ##### Note: You must have your own database and corresponding API key from Firebase or the project will not have any data.
 1. Clone repository from [https://github.com/amiraine/pacific-trek.git]
